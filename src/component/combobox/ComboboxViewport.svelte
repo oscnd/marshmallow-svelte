@@ -1,19 +1,28 @@
 <script lang="ts">
-	import { Combobox } from 'bits-ui'
-	import { cn } from '../../lib/utils.js'
+	import '$/style/tailwind.css'
+	import { Combobox as BitsCombobox, type ComboboxViewportProps } from 'bits-ui'
+	import { cn } from '$/lib/utils'
+	import { ChevronUp, ChevronDown } from '@lucide/svelte'
 
-	export type Props = {
+	export type Props = ComboboxViewportProps & {
 		class?: string
-		children?: any
-	} & Combobox.ViewportProps
+	}
 
-	let { class: className, children, ...props }: Props = $props()
+	const { class: className, children, ...props }: Props = $props()
 
-	const classes = $derived(cn('p-1', className))
+	const viewportClasses = $derived(cn('p-1', className))
 </script>
 
-<Combobox.Viewport class={classes} {...props}>
+<BitsCombobox.ScrollUpButton class="flex h-6 w-full items-center justify-center">
+	<ChevronUp class="h-4 w-4" />
+</BitsCombobox.ScrollUpButton>
+
+<BitsCombobox.Viewport {...props} class={viewportClasses}>
 	{#if children}
 		{@render children()}
 	{/if}
-</Combobox.Viewport>
+</BitsCombobox.Viewport>
+
+<BitsCombobox.ScrollDownButton class="flex h-6 w-full items-center justify-center">
+	<ChevronDown class="h-4 w-4" />
+</BitsCombobox.ScrollDownButton>

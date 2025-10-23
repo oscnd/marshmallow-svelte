@@ -1,17 +1,19 @@
 <script lang="ts">
-	import { Combobox } from 'bits-ui'
+	import '$/style/tailwind.css'
+	import { Combobox as BitsCombobox, type ComboboxPortalProps } from 'bits-ui'
+	import { cn } from '$/lib/utils'
 
-	export type Props = {
-		children?: any
-		forceMount?: boolean
-		container?: HTMLElement | string
-	} & Combobox.PortalProps
+	export type Props = ComboboxPortalProps & {
+		class?: string
+	}
 
-	let { children, forceMount, container, ...props }: Props = $props()
+	const { class: className, children, ...props }: Props = $props()
+
+	const classes = $derived(cn('', className))
 </script>
 
-<Combobox.Portal {...props}>
+<BitsCombobox.Portal {...props}>
 	{#if children}
 		{@render children()}
 	{/if}
-</Combobox.Portal>
+</BitsCombobox.Portal>
