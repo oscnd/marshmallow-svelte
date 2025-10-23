@@ -8,12 +8,12 @@
 
 	const { class: className, children, ...props }: Props = $props()
 
-	const fallbackClasses = $derived(
+	const classes = $derived(
 		cn('flex h-full w-full items-center justify-center rounded-full bg-muted', className)
 	)
 </script>
 
-<Avatar.Fallback {...props} class={fallbackClasses}>
+<Avatar.Fallback {...props} class={classes}>
 	{#if children}
 		{@render children()}
 	{/if}

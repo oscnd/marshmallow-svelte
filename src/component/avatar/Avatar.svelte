@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '../../lib/utils.js'
-	import AvatarContainer from './AvatarContainer.svelte'
+	import AvatarRoot from './AvatarRoot.svelte'
 	import AvatarImage from './AvatarImage.svelte'
 	import AvatarFallback from './AvatarFallback.svelte'
 	import type { AvatarRootProps } from 'bits-ui'
@@ -21,7 +21,7 @@
 
 	const { firstname, lastname, fullname } = props as any
 
-	const avatarClasses = $derived(
+	const classes = $derived(
 		cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', border && 'ring-2 ring-white', className)
 	)
 
@@ -41,9 +41,9 @@
 	})
 </script>
 
-<AvatarContainer class={avatarClasses} {...props}>
+<AvatarRoot {...props} class={classes} >
 	{#if src}
 		<AvatarImage {src} alt={fullname || `${firstname} ${lastname}`} />
 	{/if}
 	<AvatarFallback>{initials}</AvatarFallback>
-</AvatarContainer>
+</AvatarRoot>

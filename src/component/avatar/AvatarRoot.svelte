@@ -8,10 +8,10 @@
 
 	const { class: className, children, ...props }: Props = $props()
 
-	const avatarClasses = $derived(cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', className))
+	const classes = $derived(cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', className))
 </script>
 
-<Avatar.Root {...props} class={avatarClasses}>
+<Avatar.Root {...props} class={classes}>
 	{#if children}
 		{@render children()}
 	{/if}

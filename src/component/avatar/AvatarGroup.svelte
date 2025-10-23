@@ -10,10 +10,10 @@
 
     const {class: className, children}: Props = $props()
 
-    const groupClasses = $derived(cn('flex -space-x-2', className))
+    const classes = $derived(cn('flex -space-x-2', className))
 </script>
 
-<div class={groupClasses}>
+<div class={classes}>
     {#if children}
         {@render children()}
     {/if}

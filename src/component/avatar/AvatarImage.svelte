@@ -7,7 +7,7 @@
 
 	const { class: className, ...props }: Props = $props()
 
-	const imageClasses = $derived(cn('aspect-square h-full w-full object-cover', className))
+	const classes = $derived(cn('aspect-square h-full w-full object-cover', className))
 </script>
 
-<BitsAvatar.Image class={imageClasses} {...props} />
+<BitsAvatar.Image {...props}  class={classes} />
