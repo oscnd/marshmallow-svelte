@@ -1,0 +1,17 @@
+# environment
+.env
+
+# dependency
+node_modules/
+dist/
+*.local
+
+# editor
+.vscode/
+.idea/
+
+# os
+.DS_Store
+
+*storybook.log
+storybook-static
