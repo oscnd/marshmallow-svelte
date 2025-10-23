@@ -63,7 +63,7 @@
     const getVariantClasses = () => {
         switch (variant) {
             case 'outline':
-                return `bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground dark:hover:text-primary`
+                return `bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-primary-foreground`
             case 'primary':
                 return `bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80`
             case 'secondary':
