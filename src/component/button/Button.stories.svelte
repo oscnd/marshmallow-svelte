@@ -11,53 +11,42 @@
 			edge: {
 				control: { type: 'select' },
 				options: ['square', 'round', 'pill'],
+				description: 'Edge style of the button',
 			},
 			rounded: {
 				control: { type: 'select' },
 				options: ['xs', 'sm', 'md', 'lg', 'xl'],
+				description: 'Rounded corners size',
 			},
 			variant: {
 				control: { type: 'select' },
 				options: ['outline', 'primary', 'secondary', 'trinary', 'subtle', 'plain'],
+				description: 'Button variant style',
 			},
 			size: {
 				control: { type: 'select' },
 				options: ['sm', 'md', 'lg'],
+				description: 'Button size',
 			},
 			label: {
 				control: { type: 'text' },
+				description: 'Button text content',
 			},
 			loading: {
 				control: { type: 'boolean' },
-			},
-			disabled: {
-				control: { type: 'boolean' },
+				description: 'Show loading state with spinner',
 			},
 			palette: {
 				control: { type: 'select' },
 				options: ['danger', 'confirm', 'warning', 'solid'],
+				description: 'Color palette for the button',
 			},
-			href: {
-				control: { type: 'text' },
-			},
-			target: {
-				control: { type: 'text' },
-			},
-			rel: {
-				control: { type: 'text' },
-			},
-			type: {
-				control: { type: 'select' },
-				options: ['button', 'submit', 'reset'],
-			},
-			name: {
-				control: { type: 'text' },
-			},
-			value: {
-				control: { type: 'text' },
-			},
-			autofocus: {
-				control: { type: 'boolean' },
+		},
+		parameters: {
+			docs: {
+				controls: {
+					include: ['edge', 'rounded', 'variant', 'size', 'label', 'loading', 'palette'],
+				},
 			},
 		},
 		args: {

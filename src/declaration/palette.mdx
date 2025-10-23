@@ -1,0 +1,78 @@
+import {Meta} from '@storybook/addon-docs/blocks'
+import '../style/tailwind.css'
+
+<Meta title="Declaration/Color Palette"/>
+
+# Color Palette
+
+Our design system uses four distinct color palettes to convey different meanings and actions. Each palette includes carefully selected colors for backgrounds, hover states, text, and borders to ensure consistency and accessibility across all components.
+
+## Color Palettes
+
+### Danger Palette
+Used for destructive actions like delete, remove, or cancel operations.
+
+- **Background**: `#ef4444` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ef4444'}}></div>
+- **Hover**: `#dc2626` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#dc2626'}}></div>
+- **Text**: `#ffffff` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ffffff', border: '1px solid #e5e7eb'}}></div>
+- **Border**: `#ef4444` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ef4444'}}></div>
+
+### Confirm Palette
+Used for successful actions like save, submit, or confirm operations.
+
+- **Background**: `#22c55e` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#22c55e'}}></div>
+- **Hover**: `#16a34a` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#16a34a'}}></div>
+- **Text**: `#ffffff` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ffffff', border: '1px solid #e5e7eb'}}></div>
+- **Border**: `#22c55e` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#22c55e'}}></div>
+
+### Warning Palette
+Used for cautionary actions that require user attention but aren't destructive.
+
+- **Background**: `#f59e0b` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#f59e0b'}}></div>
+- **Hover**: `#d97706` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#d97706'}}></div>
+- **Text**: `#ffffff` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ffffff', border: '1px solid #e5e7eb'}}></div>
+- **Border**: `#f59e0b` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#f59e0b'}}></div>
+
+### Solid Palette
+Used for neutral actions and default button states.
+
+- **Background**: `#6b7280` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#6b7280'}}></div>
+- **Hover**: `#4b5563` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#4b5563'}}></div>
+- **Text**: `#ffffff` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#ffffff', border: '1px solid #e5e7eb'}}></div>
+- **Border**: `#6b7280` <div style={{ display: 'inline-block', width: '1em', height: '1em', backgroundColor: '#6b7280'}}></div>
+
+## Usage
+
+### Import
+
+```typescript
+import { type Palette } from '@/declaration/palette'
+```
+
+### Example
+
+#### Button
+
+```typescript
+interface ButtonProps {
+  palette?: Palette
+  variant?: 'outline' | 'primary' | 'secondary' | 'trinary' | 'subtle' | 'plain'
+}
+
+// Example usage
+<Button palette="danger" variant="primary">
+  Delete Item
+</Button>
+
+<Button palette="confirm" variant="primary">
+  Save Changes
+</Button>
+
+<Button palette="warning" variant="outline">
+  Reset to Default
+</Button>
+
+<Button palette="solid" variant="subtle">
+  Cancel
+</Button>
+```
