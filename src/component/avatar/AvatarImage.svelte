@@ -1,0 +1,13 @@
+<script lang="ts">
+	import '../../style/tailwind.css'
+	import { Avatar as BitsAvatar, type AvatarImageProps } from 'bits-ui'
+	import { cn } from '../../lib/utils.js'
+
+	type Props = AvatarImageProps
+
+	const { class: className, ...props }: Props = $props()
+
+	const imageClasses = $derived(cn('aspect-square h-full w-full object-cover', className))
+</script>
+
+<BitsAvatar.Image class={imageClasses} {...props} />
