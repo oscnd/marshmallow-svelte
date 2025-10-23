@@ -18,33 +18,22 @@
 	export type Props = {
 		options: Option[]
 		placeholder?: string
-		searchPlaceholder?: string
 		class?: string
 		contentClass?: string
 		triggerClass?: string
 		inputClass?: string
-		disabled?: boolean
-		type?: 'single' | 'multiple'
-		name?: string
-		value?: string | string[]
-		onValueChange?: (value: string | string[]) => void
 		children?: Snippet
 	}
 
 	let {
 		options,
-		placeholder = 'Select an option...',
-		searchPlaceholder = 'Search...',
+        placeholder = 'Search...',
 		class: className,
 		contentClass,
 		triggerClass,
 		inputClass,
-		disabled = false,
-		type = 'single',
-		name,
-		value = $bindable(''),
-		onValueChange,
 		children,
+		...props
 	}: Props = $props()
 
 	let searchValue = $state('')
@@ -57,19 +46,14 @@
 </script>
 
 <ComboboxRoot
-	{name}
-	onOpenChangeComplete={(o) => {
-		if (!o) searchValue = ''
-	}}
-	type="multiple"
+	{...({ ...props, items: options })}
 >
 	<div class="relative">
 		<Search class="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
 		<ComboboxInput
-			aria-label="Search a fruit"
 			class={inputClass}
 			oninput={(e) => (searchValue = e.currentTarget.value)}
-			placeholder={searchPlaceholder}
+            {placeholder}
 		/>
 		<ComboboxTrigger class={triggerClass} />
 	</div>
@@ -93,4 +77,7 @@
 			</ComboboxViewport>
 		</ComboboxContent>
 	</ComboboxPortal>
+	{#if children}
+		{@render children()}
+	{/if}
 </ComboboxRoot>
