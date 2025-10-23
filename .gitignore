@@ -13,5 +13,7 @@ dist/
 # os
 .DS_Store
 
+# deps
+.vite
 *storybook.log
 storybook-static
