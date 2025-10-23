@@ -63,17 +63,17 @@
     const getVariantClasses = () => {
         switch (variant) {
             case 'outline':
-                return `bg-transparent border-2 ${isDisabled ? 'border-gray-300 text-gray-400' : `border-${palette}-500 text-${palette}-500 hover:bg-${palette}-500 hover:text-white`}`
+                return `bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground dark:hover:text-primary`
             case 'primary':
-                return `bg-black text-white ${isDisabled ? 'opacity-50 cursor-not-allowed' : `hover:bg-${palette}-600`}`
+                return `bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80`
             case 'secondary':
-                return `bg-gray-200 text-gray-800 ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-300'}`
+                return `bg-secondary text-secondary-foreground hover:bg-secondary/80 dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/70`
             case 'trinary':
-                return `bg-gray-100 text-gray-700 border border-transparent ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-gray-300 hover:bg-white'}`
+                return `bg-muted text-muted-foreground border border-transparent hover:border-border hover:bg-background dark:bg-muted dark:text-muted-foreground dark:hover:border-border dark:hover:bg-background`
             case 'subtle':
-                return `bg-transparent text-gray-600 ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`
+                return `bg-transparent text-muted-foreground hover:bg-muted dark:text-muted-foreground dark:hover:bg-muted`
             case 'plain':
-                return `bg-transparent text-gray-600 border border-transparent ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-gray-300'}`
+                return `bg-transparent text-muted-foreground border border-transparent hover:border-border dark:text-muted-foreground dark:hover:border-border`
             default:
                 return ''
         }

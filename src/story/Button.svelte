@@ -1,6 +1,4 @@
 <script lang="ts">
-	import './button.css'
-
 	interface Props {
 		/** Is this the principal call to action on the page? */
 		primary?: boolean
@@ -16,10 +14,31 @@
 
 	const { primary = false, backgroundColor, size = 'medium', label, ...props }: Props = $props()
 
-	let mode = $derived(primary ? 'storybook-button--primary' : 'storybook-button--secondary')
-	let style = $derived(backgroundColor ? `background-color: ${backgroundColor}` : '')
+	const sizeClasses = $derived(() => {
+		switch (size) {
+			case 'small':
+				return 'px-3 py-1.5 text-sm'
+			case 'large':
+				return 'px-6 py-3 text-lg'
+			default:
+				return 'px-4 py-2 text-base'
+		}
+	})
+
+	const baseClasses = 'font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring'
+	const variantClasses = primary
+		? 'bg-primary text-primary-foreground hover:bg-primary/90'
+		: 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+
+	const buttonClasses = $derived(() => `${baseClasses} ${variantClasses} ${sizeClasses()}`)
+	const buttonStyle = $derived(backgroundColor ? `background-color: ${backgroundColor}` : '')
 </script>
 
-<button type="button" class={['storybook-button', `storybook-button--${size}`, mode].join(' ')} {style} {...props}>
+<button
+	type="button"
+	class={buttonClasses}
+	style={buttonStyle}
+	{...props}
+>
 	{label}
 </button>
