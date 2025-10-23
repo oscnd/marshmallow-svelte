@@ -14,8 +14,7 @@
 		border?: boolean
 		class?: string
 	} & NameProps &
-        AvatarRootProps
-
+		AvatarRootProps
 
 	const { src, border = false, class: className, ...props }: Props = $props()
 
@@ -41,7 +40,7 @@
 	})
 </script>
 
-<AvatarRoot {...props} class={classes} >
+<AvatarRoot {...props} class={classes}>
 	{#if src}
 		<AvatarImage {src} alt={fullname || `${firstname} ${lastname}`} />
 	{/if}

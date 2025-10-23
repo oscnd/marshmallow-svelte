@@ -18,7 +18,7 @@
 	)
 </script>
 
-<Combobox.Trigger class={classes} {...props} on:click={() => alert(1)}>
+<Combobox.Trigger class={classes} {...props}>
 	{#if children}
 		{@render children()}
 	{:else}

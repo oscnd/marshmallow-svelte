@@ -58,29 +58,22 @@
 
 {#snippet avatarGroupTemplate(args)}
 	<AvatarGroup>
-        <Avatar src="https://picsum.photos/200/300?salt=1" firstname="John" lastname="Doe" />
-        <Avatar src="https://example.com/broken-image.jpg" fullname="Jane Smith" />
-        <Avatar firstname="Alice" lastname="Johnson" />
-        <Avatar fullname="Bob Wilson" />
+		<Avatar src="https://picsum.photos/200/300?salt=1" firstname="John" lastname="Doe" />
+		<Avatar src="https://example.com/broken-image.jpg" fullname="Jane Smith" />
+		<Avatar firstname="Alice" lastname="Johnson" />
+		<Avatar fullname="Bob Wilson" />
 	</AvatarGroup>
 {/snippet}
 
-<Story
-	name="Avatar Group"
-	template={avatarGroupTemplate}
-/>
-
+<Story name="Avatar Group" template={avatarGroupTemplate} />
 
 {#snippet avatarGroupWithBorderTemplate(args)}
-    <AvatarGroup>
-        <Avatar src="https://picsum.photos/200/300?salt=2" firstname="John" lastname="Doe" border />
-        <Avatar src="https://example.com/broken-image.jpg" fullname="Jane Smith" border/>
-        <Avatar firstname="Alice" lastname="Johnson" border/>
-        <Avatar fullname="Bob Wilson" border/>
-    </AvatarGroup>
+	<AvatarGroup>
+		<Avatar src="https://picsum.photos/200/300?salt=2" firstname="John" lastname="Doe" border />
+		<Avatar src="https://example.com/broken-image.jpg" fullname="Jane Smith" border />
+		<Avatar firstname="Alice" lastname="Johnson" border />
+		<Avatar fullname="Bob Wilson" border />
+	</AvatarGroup>
 {/snippet}
 
-<Story
-        name="Avatar Group with Border"
-        template={avatarGroupWithBorderTemplate}
-/>
+<Story name="Avatar Group with Border" template={avatarGroupWithBorderTemplate} />

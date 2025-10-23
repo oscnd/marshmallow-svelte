@@ -11,14 +11,7 @@
 		disabled?: boolean
 	} & Omit<Combobox.ItemProps, 'value' | 'children'>
 
-	let {
-		value,
-		label,
-		selected = false,
-		class: className,
-		disabled = false,
-		...props
-	}: Props = $props()
+	let { value, label, selected = false, class: className, disabled = false, ...props }: Props = $props()
 
 	const classes = $derived(
 		cn(
@@ -28,12 +21,7 @@
 	)
 </script>
 
-<Combobox.Item
-	class={classes}
-	value={value}
-	disabled={disabled}
-	{...props}
->
+<Combobox.Item class={classes} {value} {disabled} {...props}>
 	<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
 		{#if selected}
 			<Check class="h-4 w-4" />

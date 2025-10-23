@@ -37,8 +37,8 @@
 			{name}
 			{disabled}
 			value={Array.isArray(value) ? value : []}
-			onValueChange={onValueChange}
-			onOpenChangeComplete={onOpenChangeComplete}
+			{onValueChange}
+			{onOpenChangeComplete}
 			{...props}
 		>
 			{#if children}
@@ -51,8 +51,8 @@
 			{name}
 			{disabled}
 			value={Array.isArray(value) ? value[0] || '' : value}
-			onValueChange={onValueChange}
-			onOpenChangeComplete={onOpenChangeComplete}
+			{onValueChange}
+			{onOpenChangeComplete}
 			{...props}
 		>
 			{#if children}

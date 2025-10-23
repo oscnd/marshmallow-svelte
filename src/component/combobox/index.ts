@@ -6,6 +6,7 @@ import ComboboxContent from './ComboboxContent.svelte'
 import ComboboxItem from './ComboboxItem.svelte'
 import ComboboxViewport from './ComboboxViewport.svelte'
 import ComboboxPortal from './ComboboxPortal.svelte'
+import '$/style/tailwind.css'
 
 export {
 	Combobox,
@@ -15,5 +16,5 @@ export {
 	ComboboxContent,
 	ComboboxItem,
 	ComboboxViewport,
-	ComboboxPortal
+	ComboboxPortal,
 }

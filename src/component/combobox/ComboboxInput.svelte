@@ -10,13 +10,7 @@
 		oninput?: (e: Event & { currentTarget: HTMLInputElement }) => void
 	} & Omit<Combobox.InputProps, 'class' | 'placeholder' | 'oninput'>
 
-	let {
-		placeholder = 'Search...',
-		class: className,
-		showSearchIcon = true,
-		oninput,
-		...props
-	}: Props = $props()
+	let { placeholder = 'Search...', class: className, showSearchIcon = true, oninput, ...props }: Props = $props()
 
 	const classes = $derived(
 		cn(
@@ -29,12 +23,7 @@
 
 <div class="relative w-full">
 	{#if showSearchIcon}
-		<Search class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+		<Search class="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
 	{/if}
-	<Combobox.Input
-		{placeholder}
-		{oninput}
-		class={classes}
-		{...props}
-	/>
+	<Combobox.Input {placeholder} {oninput} class={classes} {...props} />
 </div>

@@ -10,13 +10,7 @@
 		showScrollButtons?: boolean
 	} & Combobox.ContentProps
 
-	let {
-		class: className,
-		children,
-		sideOffset = 4,
-		showScrollButtons = true,
-		...props
-	}: Props = $props()
+	let { class: className, children, sideOffset = 4, showScrollButtons = true, ...props }: Props = $props()
 
 	const classes = $derived(
 		cn(
@@ -26,7 +20,7 @@
 	)
 </script>
 
-<Combobox.Content class={classes} sideOffset={sideOffset} {...props}>
+<Combobox.Content class={classes} {sideOffset} {...props}>
 	{#if showScrollButtons}
 		<Combobox.ScrollUpButton class="flex w-full items-center justify-center py-1">
 			<ChevronUp class="h-4 w-4" />

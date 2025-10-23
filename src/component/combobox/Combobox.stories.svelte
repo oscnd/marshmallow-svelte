@@ -1,6 +1,14 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
-	import { Combobox, ComboboxRoot, ComboboxInput, ComboboxTrigger, ComboboxContent, ComboboxItem, ComboboxPortal } from './index'
+	import {
+		Combobox,
+		ComboboxRoot,
+		ComboboxInput,
+		ComboboxTrigger,
+		ComboboxContent,
+		ComboboxItem,
+		ComboboxPortal,
+	} from './index'
 
 	const { Story } = defineMeta({
 		title: 'Components/Combobox',
@@ -112,23 +120,20 @@
 
 {#snippet controlledTemplate(args)}
 	<div class="space-y-4">
-		<p class="text-sm text-muted-foreground">Selected value: <code class="bg-muted px-1 rounded">{args.selectedValue || 'None'}</code></p>
-		<Combobox
-			{...args}
-			bind:value={args.selectedValue}
-			options={fruits}
-			placeholder="Select a fruit..."
-		/>
+		<p class="text-muted-foreground text-sm">
+			Selected value: <code class="bg-muted rounded px-1">{args.selectedValue || 'None'}</code>
+		</p>
+		<Combobox {...args} bind:value={args.selectedValue} options={fruits} placeholder="Select a fruit..." />
 		<div class="flex gap-2">
 			<button
-				class="px-3 py-1 text-sm bg-primary text-primary-foreground rounded hover:bg-primary/90"
-				onclick={() => args.selectedValue = 'apple'}
+				class="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-3 py-1 text-sm"
+				onclick={() => (args.selectedValue = 'apple')}
 			>
 				Set to Apple
 			</button>
 			<button
-				class="px-3 py-1 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
-				onclick={() => args.selectedValue = ''}
+				class="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded px-3 py-1 text-sm"
+				onclick={() => (args.selectedValue = '')}
 			>
 				Clear
 			</button>
@@ -186,13 +191,16 @@
 
 		<div class="flex gap-2">
 			<button
-				class="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
-				onclick={() => alert(`Form would submit with: Fruit=${args.selectedFruit}, Country=${args.selectedCountry}, Skill=${args.selectedSkill}`)}
+				class="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-4 py-2"
+				onclick={() =>
+					alert(
+						`Form would submit with: Fruit=${args.selectedFruit}, Country=${args.selectedCountry}, Skill=${args.selectedSkill}`
+					)}
 			>
 				Submit Form
 			</button>
 			<button
-				class="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+				class="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded px-4 py-2"
 				onclick={() => {
 					args.selectedFruit = ''
 					args.selectedCountry = ''
@@ -203,7 +211,7 @@
 			</button>
 		</div>
 
-		<div class="mt-4 p-3 bg-muted rounded text-sm">
+		<div class="bg-muted mt-4 rounded p-3 text-sm">
 			<strong>Form state:</strong>
 			<ul class="mt-1 space-y-1">
 				<li>Fruit: {args.selectedFruit || 'None'}</li>
@@ -226,15 +234,11 @@
 
 {#snippet advancedTemplate(args)}
 	<div class="space-y-6">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			<div class="space-y-2">
 				<label class="text-sm font-medium">Single Select</label>
-				<Combobox
-					options={fruits}
-					placeholder="Choose one fruit"
-					bind:value={args.singleSelect}
-				/>
-				<p class="text-xs text-muted-foreground">Selected: {args.singleSelect || 'None'}</p>
+				<Combobox options={fruits} placeholder="Choose one fruit" bind:value={args.singleSelect} />
+				<p class="text-muted-foreground text-xs">Selected: {args.singleSelect || 'None'}</p>
 			</div>
 
 			<div class="space-y-2">
@@ -245,33 +249,24 @@
 					allowCustom={true}
 					bind:value={args.customValue}
 				/>
-				<p class="text-xs text-muted-foreground">Selected: {args.customValue || 'None'}</p>
+				<p class="text-muted-foreground text-xs">Selected: {args.customValue || 'None'}</p>
 			</div>
 
 			<div class="space-y-2">
 				<label class="text-sm font-medium">Disabled Example</label>
-				<Combobox
-					options={fruits}
-					placeholder="This is disabled"
-					disabled={true}
-					value="apple"
-				/>
+				<Combobox options={fruits} placeholder="This is disabled" disabled={true} value="apple" />
 			</div>
 
 			<div class="space-y-2">
 				<label class="text-sm font-medium">With Disabled Items</label>
-				<Combobox
-					options={users}
-					placeholder="Select user"
-					bind:value={args.userSelect}
-				/>
-				<p class="text-xs text-muted-foreground">Selected: {args.userSelect || 'None'}</p>
+				<Combobox options={users} placeholder="Select user" bind:value={args.userSelect} />
+				<p class="text-muted-foreground text-xs">Selected: {args.userSelect || 'None'}</p>
 			</div>
 		</div>
 
-		<div class="p-4 bg-muted rounded">
-			<h3 class="font-medium mb-2">Current State</h3>
-			<div class="grid grid-cols-2 gap-2 text-sm font-mono">
+		<div class="bg-muted rounded p-4">
+			<h3 class="mb-2 font-medium">Current State</h3>
+			<div class="grid grid-cols-2 gap-2 font-mono text-sm">
 				<div>Single: {args.singleSelect || '-'}</div>
 				<div>Custom: {args.customValue || '-'}</div>
 				<div>User: {args.userSelect || '-'}</div>
@@ -280,7 +275,7 @@
 
 		<div class="flex gap-2">
 			<button
-				class="px-3 py-1 text-sm bg-primary text-primary-foreground rounded hover:bg-primary/90"
+				class="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-3 py-1 text-sm"
 				onclick={() => {
 					args.singleSelect = 'banana'
 					args.customValue = 'mango'
@@ -290,7 +285,7 @@
 				Set Demo Values
 			</button>
 			<button
-				class="px-3 py-1 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+				class="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded px-3 py-1 text-sm"
 				onclick={() => {
 					args.singleSelect = ''
 					args.customValue = ''
