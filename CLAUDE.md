@@ -40,3 +40,4 @@
 - Try to click and interact with components to see if there is any unexpected behavior.
 - Use storybook url: http://localhost:6006/iframe.html?globals=&id=components-checkbox--indeterminate&viewMode=story,
   change `checkbox` to component name and `indeterminate` to story name.
+- Any take_screenshot must write to `.local` directory.
