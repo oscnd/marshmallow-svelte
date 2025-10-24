@@ -15,9 +15,9 @@
 		children: Snippet
 	}
 
-	const { class: className, children, ...props }: Props = $props()
+	let { class: className, children, open = $bindable(), ...props }: Props = $props()
 </script>
 
-<DialogPrimitive.Root {...props}>
+<DialogPrimitive.Root {...props} bind:open>
 	{@render children()}
 </DialogPrimitive.Root>

@@ -3,6 +3,8 @@
     import {
         Dialog as DialogRoot,
         DialogContent,
+        DialogTrigger,
+        DialogClose,
         DialogHeader,
         DialogTitle,
         DialogDescription,
@@ -16,6 +18,8 @@
         component: DialogRoot,
         subcomponents: {
             DialogContent,
+            DialogTrigger,
+            DialogClose,
             DialogHeader,
             DialogTitle,
             DialogDescription,
@@ -35,11 +39,11 @@
 
 {#snippet basicDialogTemplate(args)}
     <DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
-        <Dialog.Trigger asChild>
+        <DialogTrigger asChild>
             {#snippet children(builder)}
                 <Button {...builder}>Open Dialog</Button>
             {/snippet}
-        </Dialog.Trigger>
+        </DialogTrigger>
         <DialogContent>
             <DialogHeader>
                 <DialogTitle>Are you sure?</DialogTitle>
@@ -49,31 +53,31 @@
                 </DialogDescription>
             </DialogHeader>
             <DialogFooter>
-                <Dialog.Close asChild>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder} variant="outline">Cancel</Button>
                     {/snippet}
-                </Dialog.Close>
-                <Dialog.Close asChild>
+                </DialogClose>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder} variant="primary">Continue</Button>
                     {/snippet}
-                </Dialog.Close>
+                </DialogClose>
             </DialogFooter>
         </DialogContent>
     </DialogRoot>
     <p class="text-muted-foreground mt-4 text-sm">Dialog is {args.open ? 'open' : 'closed'}</p>
 {/snippet}
 
-<Story name="Basic" template={basicDialogTemplate}/>
+<Story name="Basic" template={basicDialogTemplate} args={{open: false}}/>
 
 {#snippet formDialogTemplate(args)}
     <DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
-        <Dialog.Trigger asChild>
+        <DialogTrigger asChild>
             {#snippet children(builder)}
                 <Button {...builder}>Edit Profile</Button>
             {/snippet}
-        </Dialog.Trigger>
+        </DialogTrigger>
         <DialogContent>
             <DialogHeader>
                 <DialogTitle>Edit Profile</DialogTitle>
@@ -92,17 +96,17 @@
                     <label for="username" class="text-right">Username</label>
                     <input
                             id="username"
-                            value="@peduarte"
+                            value="@bsthun"
                             class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring col-span-3 h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                     />
                 </div>
             </div>
             <DialogFooter>
-                <Dialog.Close asChild>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder} type="submit">Save changes</Button>
                     {/snippet}
-                </Dialog.Close>
+                </DialogClose>
             </DialogFooter>
         </DialogContent>
     </DialogRoot>
@@ -113,11 +117,11 @@
 
 {#snippet scrollableDialogTemplate(args)}
     <DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
-        <Dialog.Trigger asChild>
+        <DialogTrigger asChild>
             {#snippet children(builder)}
                 <Button {...builder}>View Terms</Button>
             {/snippet}
-        </Dialog.Trigger>
+        </DialogTrigger>
         <DialogContent class="max-w-2xl">
             <DialogHeader>
                 <DialogTitle>Terms of Service</DialogTitle>
@@ -174,16 +178,16 @@
                 </div>
             </div>
             <DialogFooter>
-                <Dialog.Close asChild>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder} variant="outline">Decline</Button>
                     {/snippet}
-                </Dialog.Close>
-                <Dialog.Close asChild>
+                </DialogClose>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder} variant="primary">Accept</Button>
                     {/snippet}
-                </Dialog.Close>
+                </DialogClose>
             </DialogFooter>
         </DialogContent>
     </DialogRoot>
@@ -194,7 +198,7 @@
 
 {#snippet customStyledDialogTemplate(args)}
     <DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
-        <Dialog.Trigger asChild>
+        <DialogTrigger asChild>
             {#snippet children(builder)}
                 <Button {...builder}
                         class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
@@ -202,7 +206,7 @@
                 </Button
                 >
             {/snippet}
-        </Dialog.Trigger>
+        </DialogTrigger>
         <DialogContent
                 class="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950"
         >
@@ -219,7 +223,7 @@
                 <p class="text-center text-lg font-medium">✨ Beautiful custom styling ✨</p>
             </div>
             <DialogFooter>
-                <Dialog.Close asChild>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder}
                                 variant="outline"
@@ -228,8 +232,8 @@
                         </Button
                         >
                     {/snippet}
-                </Dialog.Close>
-                <Dialog.Close asChild>
+                </DialogClose>
+                <DialogClose asChild>
                     {#snippet children(builder)}
                         <Button {...builder}
                                 class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
@@ -237,7 +241,7 @@
                         </Button
                         >
                     {/snippet}
-                </Dialog.Close>
+                </DialogClose>
             </DialogFooter>
         </DialogContent>
     </DialogRoot>
