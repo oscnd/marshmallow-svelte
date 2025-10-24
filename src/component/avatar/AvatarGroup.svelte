@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '../../lib/utils.js'
+	import { cn } from '$/lib/utils'
 	import Avatar from './Avatar.svelte'
 	import type { Snippet, SvelteComponent } from 'svelte'
 

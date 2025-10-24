@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../../style/tailwind.css'
 	import { Avatar as BitsAvatar, type AvatarImageProps } from 'bits-ui'
-	import { cn } from '../../lib/utils.js'
+	import { cn } from '$/lib/utils'
 
 	type Props = AvatarImageProps
 

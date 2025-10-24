@@ -10,3 +10,17 @@
 - Order component props from {...props}, class={classes}, other props.
 - See `src/component/avatar/{Avatar.svelte,Avatar.stories.svelte}`, `src/component/button/Button.svelte`, `src/component/combobox/Combobox.svelte`, `src/component/dialog/Dialog.svelte` for reference.
 - All bindable props must retrieve from `$props`, example from `src/component/dialog/Dialog.svelte`.
+
+## Component Implementation
+
+- Example `src/component/:component/index.ts`
+    ```
+    import Combobox from './Combobox.svelte'
+    import ComboboxRoot from './ComboboxRoot.svelte'
+    import '$/style/tailwind.css'
+
+    export {
+        Combobox,
+        ComboboxRoot,
+    }
+    ```

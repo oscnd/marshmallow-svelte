@@ -148,18 +148,19 @@
 {/snippet}
 
 <Story
-	name="Controlled"
 	args={{
 		selectedValue: '',
 	}}
+	name="Controlled"
 	template={controlledTemplate}
 />
 
 {#snippet formTemplate(args)}
 	<div class="space-y-4">
 		<div class="space-y-2">
-			<label class="text-sm font-medium">Favorite Fruit</label>
+			<label for="combo" class="text-sm font-medium">Favorite Fruit</label>
 			<Combobox
+				id="combo"
 				name="favoriteFruit"
 				options={fruits}
 				placeholder="Select your favorite fruit..."
@@ -168,8 +169,9 @@
 		</div>
 
 		<div class="space-y-2">
-			<label class="text-sm font-medium">Country</label>
+			<label for="combo" class="text-sm font-medium">Country</label>
 			<Combobox
+				id="combo"
 				name="country"
 				options={countries}
 				placeholder="Select your country..."
@@ -178,8 +180,9 @@
 		</div>
 
 		<div class="space-y-2">
-			<label class="text-sm font-medium">Custom Skill (with search)</label>
+			<label for="combo" class="text-sm font-medium">Custom Skill (with search)</label>
 			<Combobox
+				id="combo"
 				name="skill"
 				options={[
 					{ value: 'javascript', label: 'JavaScript' },
@@ -229,12 +232,12 @@
 {/snippet}
 
 <Story
-	name="Form Integration"
 	args={{
 		selectedFruit: '',
 		selectedCountry: '',
 		selectedSkill: '',
 	}}
+	name="Form Integration"
 	template={formTemplate}
 />
 
@@ -242,14 +245,15 @@
 	<div class="space-y-6">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			<div class="space-y-2">
-				<label class="text-sm font-medium">Single Select</label>
-				<Combobox options={fruits} placeholder="Choose one fruit" bind:value={args.singleSelect} />
+				<label for="combo" class="text-sm font-medium">Single Select</label>
+				<Combobox id="combo" options={fruits} placeholder="Choose one fruit" bind:value={args.singleSelect} />
 				<p class="text-muted-foreground text-xs">Selected: {args.singleSelect || 'None'}</p>
 			</div>
 
 			<div class="space-y-2">
-				<label class="text-sm font-medium">With Custom Values</label>
+				<label for="combo" class="text-sm font-medium">With Custom Values</label>
 				<Combobox
+					id="combo"
 					options={fruits}
 					placeholder="Add custom fruit if needed"
 					allowCustom={true}
@@ -259,13 +263,13 @@
 			</div>
 
 			<div class="space-y-2">
-				<label class="text-sm font-medium">Disabled Example</label>
-				<Combobox options={fruits} placeholder="This is disabled" disabled={true} value="apple" />
+				<label for="combo" class="text-sm font-medium">Disabled Example</label>
+				<Combobox id="combo" options={fruits} placeholder="This is disabled" disabled={true} value="apple" />
 			</div>
 
 			<div class="space-y-2">
-				<label class="text-sm font-medium">With Disabled Items</label>
-				<Combobox options={users} placeholder="Select user" bind:value={args.userSelect} />
+				<label for="combo" class="text-sm font-medium">With Disabled Items</label>
+				<Combobox id="combo" options={users} placeholder="Select user" bind:value={args.userSelect} />
 				<p class="text-muted-foreground text-xs">Selected: {args.userSelect || 'None'}</p>
 			</div>
 		</div>
@@ -305,11 +309,11 @@
 {/snippet}
 
 <Story
-	name="Advanced Examples"
 	args={{
 		singleSelect: '',
 		customValue: '',
 		userSelect: '',
 	}}
+	name="Advanced Examples"
 	template={advancedTemplate}
 />
