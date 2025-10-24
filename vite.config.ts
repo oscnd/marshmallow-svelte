@@ -11,7 +11,12 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 
 export default defineConfig({
 	plugins: [svelte(), tailwindcss()],
-    // @ts-ignore
+	resolve: {
+		alias: {
+			$: path.resolve('./src'),
+		},
+	},
+	// @ts-ignore
 	test: {
 		projects: [
 			{

@@ -102,23 +102,21 @@
 
 <Story name="Solid" args={{ variant: 'primary', palette: 'solid', label: 'Solid Button' }} />
 
-<!-- States -->
 <Story name="Loading" args={{ loading: true, label: 'Loading Button' }} />
 
 <Story name="Disabled" args={{ disabled: true, label: 'Disabled Button' }} />
 
-<!-- Button Types -->
 <Story name="Submit" args={{ type: 'submit', label: 'Submit Button' }} />
 
 <Story name="Reset" args={{ type: 'reset', label: 'Reset Button' }} />
 
 <Story name="With Name and Value" args={{ name: 'action', value: 'click', label: 'Named Button' }} />
 
-<!-- Link Button -->
 <Story name="Link Button" args={{ href: '#', label: 'Link Button' }} />
 
-<Story name="External Link" args={{ href: 'https://example.com', target: '_blank', rel: 'noopener noreferrer', label: 'External Link' }} />
+<Story
+	name="External Link"
+	args={{ href: 'https://example.com', target: '_blank', rel: 'noopener noreferrer', label: 'External Link' }}
+/>
 
-<!-- With Custom Class -->
 <Story name="Custom Class" args={{ label: 'Custom Styled Button' }} />
-
