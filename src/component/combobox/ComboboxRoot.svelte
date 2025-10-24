@@ -5,13 +5,13 @@
 
 	export type Props = ComboboxRootProps & {
 		class?: string
-        value?: any
+		value?: any
 	}
 
 	let { class: className, children, value = $bindable(), ...props }: Props = $props()
 </script>
 
-<BitsCombobox.Root {...props} bind:value>
+<BitsCombobox.Root {...props} bind:value >
 	{#if children}
 		{@render children()}
 	{/if}

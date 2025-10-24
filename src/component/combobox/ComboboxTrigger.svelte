@@ -13,7 +13,7 @@
 	const classes = $derived(cn('absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2', className))
 </script>
 
-<BitsCombobox.Trigger {...props} class={classes}>
+<BitsCombobox.Trigger {...props} class={classes} aria-label="Combobox Trigger">
 	{#if children}
 		{@render children()}
 	{:else}
