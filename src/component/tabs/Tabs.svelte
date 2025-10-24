@@ -5,6 +5,7 @@
 	import TabsContent from './TabsContent.svelte'
 	import type { Props as TabsRootProps } from './TabsRoot.svelte'
 	import type { Snippet } from 'svelte'
+	import { cn } from '$/lib/utils.ts'
 
 	export type Tab = {
 		value: string
@@ -36,7 +37,8 @@
 		...props
 	}: Props = $props()
 
-	</script>
+	const classes = $derived(cn(className))
+</script>
 
 <TabsRoot {...props} class={className} bind:value>
 	<TabsList class={listClass}>

@@ -1,7 +1,7 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
 	import { Pagination } from './index'
-    import '$/style/style.scss'
+	import '$/style/style.scss'
 
 	const { Story } = defineMeta({
 		title: 'Components/Pagination',
@@ -94,35 +94,35 @@
 />
 
 {#snippet bindableTemplate(args: Args)}
-		<div class="rounded border border-gray-200 p-4 space-y-2 text-sm text-gray-600">
-			<div>Show: <span class="story-code">{startIndex} - {endIndex} / {total}</span></div>
-			<div>Page: <span class="story-code">{currentPage}</span></div>
-			<div>Total pages: <span class="story-code">{totalPages}</span></div>
-			<div class="flex items-center gap-2">
-				<label for="items-per-page">Items per page:</label>
-				<select
-					id="items-per-page"
-					bind:value={perPage}
-					onchange={handlePaginationChange}
-					class="rounded border border-gray-300 px-2"
-				>
-					<option value={5}>5</option>
-					<option value={10}>10</option>
-					<option value={20}>20</option>
-					<option value={50}>50</option>
-				</select>
-			</div>
+	<div class="space-y-2 rounded border border-gray-200 p-4 text-sm text-gray-600">
+		<div>Show: <span class="story-code">{startIndex} - {endIndex} / {total}</span></div>
+		<div>Page: <span class="story-code">{currentPage}</span></div>
+		<div>Total pages: <span class="story-code">{totalPages}</span></div>
+		<div class="flex items-center gap-2">
+			<label for="items-per-page">Items per page:</label>
+			<select
+				id="items-per-page"
+				bind:value={perPage}
+				onchange={handlePaginationChange}
+				class="rounded border border-gray-300 px-2"
+			>
+				<option value={5}>5</option>
+				<option value={10}>10</option>
+				<option value={20}>20</option>
+				<option value={50}>50</option>
+			</select>
 		</div>
+	</div>
 
-		<Pagination
-			count={total}
-			{perPage}
-			siblingCount={2}
-			loop={true}
-			bind:page={currentPage}
-			onPageChange={handlePageChange}
-			class="mt-4"
-		/>
+	<Pagination
+		count={total}
+		{perPage}
+		siblingCount={2}
+		loop={true}
+		bind:page={currentPage}
+		onPageChange={handlePageChange}
+		class="mt-4"
+	/>
 {/snippet}
 
 <Story

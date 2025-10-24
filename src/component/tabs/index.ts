@@ -5,10 +5,4 @@ import TabsTrigger from './TabsTrigger.svelte'
 import TabsContent from './TabsContent.svelte'
 import '$/style/tailwind.css'
 
-export {
-	Tabs,
-	TabsRoot,
-	TabsList,
-	TabsTrigger,
-	TabsContent,
-}
+export { Tabs, TabsRoot, TabsList, TabsTrigger, TabsContent }

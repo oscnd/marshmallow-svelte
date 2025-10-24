@@ -22,6 +22,10 @@
 	})
 </script>
 
+<script>
+	import { cn } from '$/lib/utils.js'
+</script>
+
 {#snippet basicTemplate(args)}
 	<Tabs
 		class={args.class}
@@ -33,23 +37,23 @@
 			{
 				value: 'account',
 				label: 'Account',
-				content: () => `<p>Make changes to your account here. Click save when you're done.</p>`
+				content: () => `<p>Make changes to your account here. Click save when you're done.</p>`,
 			},
 			{
 				value: 'password',
 				label: 'Password',
-				content: () => `<p>Change your password here. After saving, you'll be logged out.</p>`
-			}
+				content: () => `<p>Change your password here. After saving, you'll be logged out.</p>`,
+			},
 		]}
 	/>
 {/snippet}
 
 <Story
+	args={{
+		value: 'account',
+	}}
 	name="Basic"
 	template={basicTemplate}
-	args={{
-		value: 'account'
-	}}
 />
 
 {#snippet showcaseTemplate(args)}
@@ -60,19 +64,19 @@
 				<div class="flex items-center justify-between">
 					<div>
 						<h3 class="text-lg font-semibold">Prague</h3>
-						<p class="text-sm text-muted-foreground">06:05</p>
+						<p class="text-muted-foreground text-sm">06:05</p>
 					</div>
 					<div class="text-center">
 						<p class="text-sm font-medium">3h 30m</p>
-						<div class="flex items-center justify-center space-x-1 my-2">
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
+						<div class="my-2 flex items-center justify-center space-x-1">
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
 						</div>
 					</div>
 					<div class="text-right">
 						<h3 class="text-lg font-semibold">Malaga</h3>
-						<p class="text-sm text-muted-foreground">09:35</p>
+						<p class="text-muted-foreground text-sm">09:35</p>
 					</div>
 				</div>
 			</div>
@@ -83,19 +87,19 @@
 				<div class="flex items-center justify-between">
 					<div>
 						<h3 class="text-lg font-semibold">Malaga</h3>
-						<p class="text-sm text-muted-foreground">07:25</p>
+						<p class="text-muted-foreground text-sm">07:25</p>
 					</div>
 					<div class="text-center">
 						<p class="text-sm font-medium">3h 20m</p>
-						<div class="flex items-center justify-center space-x-1 my-2">
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
-							<div class="w-2 h-2 bg-muted rounded-full"></div>
+						<div class="my-2 flex items-center justify-center space-x-1">
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
+							<div class="bg-muted h-2 w-2 rounded-full"></div>
 						</div>
 					</div>
 					<div class="text-right">
 						<h3 class="text-lg font-semibold">Prague</h3>
-						<p class="text-sm text-muted-foreground">10:45</p>
+						<p class="text-muted-foreground text-sm">10:45</p>
 					</div>
 				</div>
 			</div>
@@ -103,39 +107,39 @@
 
 		<Tabs
 			class={args.class}
-			listClass={args.listClass}
-			triggerClass={args.triggerClass}
+			listClass={cn(args.listClass, 'w-full justify-start')}
+			triggerClass={cn(args.triggerClass, 'flex-1')}
 			contentClass={args.contentClass}
 			bind:value={args.value}
 			tabs={[
 				{
 					value: 'prague-malaga',
 					label: 'Outbound',
-					content: pragueTabContent
+					content: pragueTabContent,
 				},
 				{
 					value: 'malaga-prague',
 					label: 'Inbound',
-					content: malagaTabContent
-				}
+					content: malagaTabContent,
+				},
 			]}
 		/>
 	</div>
 {/snippet}
 
 <Story
-	name="Showcase"
-	template={showcaseTemplate}
 	args={{
-		value: 'prague-malaga'
+		value: 'prague-malaga',
 	}}
+	name="Showcase"
 	parameters={{
 		docs: {
 			description: {
-				story: 'Flight booking tabs inspired by the bits UI example, showing Prague to Malaga flights.'
-			}
-		}
+				story: 'Flight booking tabs inspired by the bits UI example, showing Prague to Malaga flights.',
+			},
+		},
 	}}
+	template={showcaseTemplate}
 />
 
 {#snippet customStyleTemplate(args)}
@@ -165,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-				`
+				`,
 			},
 			{
 				value: 'business',
@@ -186,18 +190,18 @@
 							</div>
 						</div>
 					</div>
-				`
-			}
+				`,
+			},
 		]}
 	/>
 {/snippet}
 
 <Story
+	args={{
+		value: 'personal',
+	}}
 	name="Custom Style"
 	template={customStyleTemplate}
-	args={{
-		value: 'personal'
-	}}
 />
 
 {#snippet manualActivationTemplate(args)}
@@ -209,33 +213,35 @@
 			{
 				value: 'tab1',
 				label: 'Tab 1',
-				content: () => `<p>Content for Tab 1. This tab requires manual activation.</p>`
+				content: () => `<p>Content for Tab 1. This tab requires manual activation.</p>`,
 			},
 			{
 				value: 'tab2',
 				label: 'Tab 2',
-				content: () => `<p>Content for Tab 2. Click to activate this tab.</p>`
+				content: () => `<p>Content for Tab 2. Click to activate this tab.</p>`,
 			},
 			{
 				value: 'tab3',
 				label: 'Tab 3',
-				content: () => `<p>Content for Tab 3. Manual activation mode is enabled.</p>`
-			}
+				content: () => `<p>Content for Tab 3. Manual activation mode is enabled.</p>`,
+			},
 		]}
 	/>
+	<p>Current value: <span class="story-code">{args.value}</span></p>
+	<button on:click={() => (args.value = 'tab2')}> Activate Tab 2</button>
 {/snippet}
 
 <Story
-	name="Manual Activation"
-	template={manualActivationTemplate}
 	args={{
-		value: 'tab1'
+		value: 'tab1',
 	}}
+	name="Manual Activation"
 	parameters={{
 		docs: {
 			description: {
-				story: 'Tabs with manual activation mode. Users must click to activate tabs instead of automatic activation on focus.'
-			}
-		}
+				story: 'Tabs with manual activation mode. Users must click to activate tabs instead of automatic activation on focus.',
+			},
+		},
 	}}
+	template={manualActivationTemplate}
 />
