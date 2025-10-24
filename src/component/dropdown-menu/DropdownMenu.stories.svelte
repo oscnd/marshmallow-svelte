@@ -194,7 +194,7 @@
 			{/snippet}
 		</DropdownMenu>
 		<p class="text-muted-foreground text-sm">
-			Click the "Options Menu" button to see the dropdown with a custom trigger
+			Click the "Options Menu" button to see the drodpdown with a custom trigger
 		</p>
 	</div>
 {/snippet}

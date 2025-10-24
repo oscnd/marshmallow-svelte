@@ -17,7 +17,7 @@
 
 	type MenuItem = {
 		label: string
-		value?: string
+		value: string
 		disabled?: boolean
 		type?: 'item' | 'checkbox' | 'radio' | 'separator' | 'label'
 		children?: MenuItem[]
@@ -51,7 +51,7 @@
 					acc[item.label] = false
 				}
 				return acc
-			}, {}),
+			}, {} as CheckboxState),
 		} as CheckboxState),
 		...props
 	}: Props = $props()
@@ -150,7 +150,7 @@
 											<DropdownMenuRadioGroup bind:value={radioValue}>
 												{#each childRadioGroup.items as childRadioItem, k (k + (childRadioItem.label || childRadioItem.value || ''))}
 													<DropdownMenuRadioItem
-														value={childRadioItem.value!}
+														value={childRadioItem.value}
 														disabled={childRadioItem.disabled}
 														text={childRadioItem.label}
 													/>

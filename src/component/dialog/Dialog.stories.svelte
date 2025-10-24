@@ -1,7 +1,7 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
 	import {
-		Dialog as DialogRoot,
+		DialogRoot,
 		DialogContent,
 		DialogTrigger,
 		DialogClose,
@@ -72,7 +72,7 @@
 <Story name="Basic" template={basicDialogTemplate} args={{ open: false }} />
 
 {#snippet formDialogTemplate(args)}
-	<DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
+	<DialogRoot bind:open={args.open} onOpenChange={(e) => args.open = e}>
 		<DialogTrigger asChild>
 			{#snippet children(builder)}
 				<Button {...builder}>Edit Profile</Button>
@@ -113,7 +113,7 @@
 	<p class="text-muted-foreground mt-4 text-sm">Dialog is {args.open ? 'open' : 'closed'}</p>
 {/snippet}
 
-<Story name="Form" template={formDialogTemplate} />
+<Story name="Form" template={formDialogTemplate} args={{ open: false }} />
 
 {#snippet scrollableDialogTemplate(args)}
 	<DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
@@ -194,7 +194,7 @@
 	<p class="text-muted-foreground mt-4 text-sm">Dialog is {args.open ? 'open' : 'closed'}</p>
 {/snippet}
 
-<Story name="Scrollable Content" template={scrollableDialogTemplate} />
+<Story name="Scrollable Content" template={scrollableDialogTemplate} args={{ open: false }} />
 
 {#snippet customStyledDialogTemplate(args)}
 	<DialogRoot bind:open={args.open} onOpenChange={args.onOpenChange}>
@@ -247,4 +247,4 @@
 	<p class="text-muted-foreground mt-4 text-sm">Dialog is {args.open ? 'open' : 'closed'}</p>
 {/snippet}
 
-<Story name="Custom Styled" template={customStyledDialogTemplate} />
+<Story name="Custom Styled" template={customStyledDialogTemplate} args={{ open: false }} />

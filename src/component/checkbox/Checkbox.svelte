@@ -12,7 +12,7 @@
 		children?: Snippet
 	}
 
-	let { class: className, children, checked, indeterminate, disabled = false, ...props }: Props = $props()
+	let { class: className, children, checked = $bindable(false), indeterminate = $bindable(false), disabled = false, ...props }: Props = $props()
 
 	const classes = $derived(
 		cn(
