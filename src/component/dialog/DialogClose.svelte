@@ -14,7 +14,7 @@
 
 	const classes = $derived(
 		cn(
-			'inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',
+			'inline-flex items-center justify-center font-medium transition-colors focus:outline-none',
 			className
 		)
 	)

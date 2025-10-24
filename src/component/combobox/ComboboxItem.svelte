@@ -6,7 +6,7 @@
 	import type { Snippet } from 'svelte'
 
 	export type Props = ComboboxItemProps & {
-		children?: Snippet<{ selected: boolean; highlighted: boolean }[]>
+		children?: Snippet<[{ selected: boolean; highlighted: boolean }]>
 		class?: string
 	}
 

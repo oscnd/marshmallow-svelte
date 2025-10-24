@@ -4,7 +4,7 @@
 	import { cn } from '../../lib/utils.js'
 	import type { SvelteComponent } from 'svelte'
 
-	export type Props = AvatarRootProps & {}
+	export type Props = AvatarRootProps
 
 	const { class: className, children, ...props }: Props = $props()
 

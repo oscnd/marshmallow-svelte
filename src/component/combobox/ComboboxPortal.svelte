@@ -9,7 +9,7 @@
 
 	const { class: className, children, ...props }: Props = $props()
 
-	const classes = $derived(cn('', className))
+	const classes = $derived(cn(className))
 </script>
 
 <BitsCombobox.Portal {...props}>
