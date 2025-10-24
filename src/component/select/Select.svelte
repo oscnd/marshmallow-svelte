@@ -38,8 +38,11 @@
 
 	const selectedLabel = $derived(
 		typeof value === 'string'
-            ? options.find((option) => option.value === value)?.label || placeholder
-            : options.filter((option) => value?.includes(option.value)).map((option) => option.label).join(', ') || placeholder
+			? options.find((option) => option.value === value)?.label || placeholder
+			: options
+					.filter((option) => value?.includes(option.value))
+					.map((option) => option.label)
+					.join(', ') || placeholder
 	)
 </script>
 

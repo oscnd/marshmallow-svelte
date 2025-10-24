@@ -1,18 +1,18 @@
 <script lang="ts">
 	import '$/style/tailwind.css'
-	import { Select, type SelectRootProps } from 'bits-ui'
+	import { DropdownMenu, type DropdownMenuRadioGroupProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 
-	export type Props = SelectRootProps & {
+	export type Props = DropdownMenuRadioGroupProps & {
 		class?: string
-		value?: any
+		value?: string
 	}
 
 	let { class: className, children, value = $bindable(), ...props }: Props = $props()
 </script>
 
-<Select.Root {...props} bind:value>
+<DropdownMenu.RadioGroup {...props} bind:value class={className}>
 	{#if children}
 		{@render children()}
 	{/if}
-</Select.Root>
+</DropdownMenu.RadioGroup>

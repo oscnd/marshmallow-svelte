@@ -6,11 +6,4 @@ import PopoverArrow from './PopoverArrow.svelte'
 import PopoverPortal from './PopoverPortal.svelte'
 import '$/style/tailwind.css'
 
-export {
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	PopoverClose,
-	PopoverArrow,
-	PopoverPortal,
-}
+export { Popover, PopoverTrigger, PopoverContent, PopoverClose, PopoverArrow, PopoverPortal }

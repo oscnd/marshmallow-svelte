@@ -7,12 +7,4 @@ import SelectViewport from './SelectViewport.svelte'
 import SelectPortal from './SelectPortal.svelte'
 import '$/style/tailwind.css'
 
-export {
-	Select,
-	SelectRoot,
-	SelectTrigger,
-	SelectContent,
-	SelectItem,
-	SelectViewport,
-	SelectPortal,
-}
+export { Select, SelectRoot, SelectTrigger, SelectContent, SelectItem, SelectViewport, SelectPortal }

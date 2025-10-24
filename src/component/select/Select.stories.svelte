@@ -1,13 +1,6 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
-	import {
-		Select,
-		SelectRoot,
-		SelectTrigger,
-		SelectContent,
-		SelectItem,
-		SelectPortal,
-	} from './index'
+	import { Select, SelectRoot, SelectTrigger, SelectContent, SelectItem, SelectPortal } from './index'
 
 	const { Story } = defineMeta({
 		title: 'Components/Select',
@@ -113,12 +106,7 @@
 		<p class="text-muted-foreground text-sm">
 			Selected: <code class="bg-muted rounded px-1">{args.selectedValue || 'None'}</code>
 		</p>
-		<Select
-			{...args}
-			bind:value={args.selectedValue}
-			options={fruits}
-			placeholder="Select a fruit..."
-		/>
+		<Select {...args} bind:value={args.selectedValue} options={fruits} placeholder="Select a fruit..." />
 		<div class="flex gap-2">
 			<button
 				class="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-3 py-1 text-sm"

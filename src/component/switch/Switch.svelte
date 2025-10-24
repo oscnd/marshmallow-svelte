@@ -14,7 +14,7 @@
 		thumbChildren?: Snippet
 	}
 
-	let { class: className, thumbClass, thumbChildren, checked = $bindable(), ...props }: Props = $props()
+	let { class: className, thumbClass, thumbChildren, checked = $bindable(false), ...props }: Props = $props()
 
 	const classes = $derived(cn(className))
 </script>
