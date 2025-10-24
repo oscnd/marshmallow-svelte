@@ -34,7 +34,7 @@
 	--ring: oklch(0.707 0.022 261.325);
 
 	/* Border Colors */
-	--border: hsl(240 6% 10%);
+	--border: hsla(240 6% 10% / 0.1);
 	--border-input: hsla(240 6% 10% / 0.17);
 	--border-input-hover: hsla(240 6% 10% / 0.4);
 	--border-card: hsla(240 6% 10% / 0.1);
@@ -98,7 +98,7 @@
 	--ring: oklch(0.551 0.027 264.364);
 
 	/* Border Colors */
-	--border: hsl(0 0% 96%);
+	--border: hsla(0 0% 96% / 0.1);
 	--border-input: hsla(0 0% 96% / 0.17);
 	--border-input-hover: hsla(0 0% 96% / 0.4);
 	--border-card: hsla(0 0% 96% / 0.1);
