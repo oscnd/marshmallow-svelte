@@ -26,11 +26,7 @@
 {#snippet basicTemplate(args)}
 	<div class="space-y-2">
 		<p>Content above separator</p>
-		<Separator
-			class={args.class}
-			orientation={args.orientation}
-			decorative={args.decorative}
-		/>
+		<Separator class={args.class} orientation={args.orientation} decorative={args.decorative} />
 		<p>Content below separator</p>
 	</div>
 {/snippet}
@@ -49,13 +45,11 @@
 	<div class="w-full max-w-sm">
 		<div class="space-y-1">
 			<h4 class="font-semibold">Bits UI</h4>
-			<p class="text-muted-foreground text-sm">
-				Headless UI components for Svelte.
-			</p>
+			<p class="text-muted-foreground text-sm">Headless UI components for Svelte.</p>
 		</div>
 		<Separator
 			class={cn(
-				'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]',
+				'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]',
 				args.class
 			)}
 			orientation={args.orientation}
@@ -66,7 +60,7 @@
 			<Separator
 				orientation="vertical"
 				class={cn(
-					'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]',
+					'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]',
 					args.class
 				)}
 				decorative={args.decorative}
@@ -75,7 +69,7 @@
 			<Separator
 				orientation="vertical"
 				class={cn(
-					'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]',
+					'my-4 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]',
 					args.class
 				)}
 				decorative={args.decorative}
@@ -97,17 +91,9 @@
 {#snippet decorativeTemplate(args)}
 	<div class="space-y-4">
 		<p>Separator with decorative prop (won't be announced by screen readers):</p>
-		<Separator
-			class={args.class}
-			orientation={args.orientation}
-			decorative={true}
-		/>
+		<Separator class={args.class} orientation={args.orientation} decorative={true} />
 		<p>Separator without decorative prop (will be announced by screen readers as a separator):</p>
-		<Separator
-			class={args.class}
-			orientation={args.orientation}
-			decorative={false}
-		/>
+		<Separator class={args.class} orientation={args.orientation} decorative={false} />
 	</div>
 {/snippet}
 
@@ -129,24 +115,12 @@
 
 {#snippet navigationTemplate(args)}
 	<nav class="flex items-center space-x-4 text-sm">
-		<button class="font-medium hover:text-primary cursor-pointer">Home</button>
-		<Separator
-			orientation="vertical"
-			class={cn('h-4', args.class)}
-			decorative={args.decorative}
-		/>
+		<button class="hover:text-primary cursor-pointer font-medium">Home</button>
+		<Separator orientation="vertical" class={cn('h-4', args.class)} decorative={args.decorative} />
 		<button class="hover:text-primary cursor-pointer">Products</button>
-		<Separator
-			orientation="vertical"
-			class={cn('h-4', args.class)}
-			decorative={args.decorative}
-		/>
+		<Separator orientation="vertical" class={cn('h-4', args.class)} decorative={args.decorative} />
 		<button class="hover:text-primary cursor-pointer">About</button>
-		<Separator
-			orientation="vertical"
-			class={cn('h-4', args.class)}
-			decorative={args.decorative}
-		/>
+		<Separator orientation="vertical" class={cn('h-4', args.class)} decorative={args.decorative} />
 		<button class="hover:text-primary cursor-pointer">Contact</button>
 	</nav>
 {/snippet}
@@ -171,11 +145,7 @@
 					<div class="hover:text-primary cursor-pointer">Security</div>
 				</div>
 			</div>
-			<Separator
-				class={args.class}
-				orientation={args.orientation}
-				decorative={args.decorative}
-			/>
+			<Separator class={args.class} orientation={args.orientation} decorative={args.decorative} />
 			<div class="space-y-2">
 				<h3 class="font-semibold">Preferences</h3>
 				<div class="space-y-1 text-sm">
@@ -185,25 +155,13 @@
 				</div>
 			</div>
 		</aside>
-		<Separator
-			orientation="vertical"
-			class={cn('mx-4 h-auto', args.class)}
-			decorative={args.decorative}
-		/>
+		<Separator orientation="vertical" class={cn('mx-4 h-auto', args.class)} decorative={args.decorative} />
 		<main class="flex-1">
 			<div class="space-y-4">
 				<h3 class="font-semibold">Content Area</h3>
-				<p class="text-sm text-muted-foreground">
-					This is the main content area separated from the sidebar.
-				</p>
-				<Separator
-					class={args.class}
-					orientation={args.orientation}
-					decorative={args.decorative}
-				/>
-				<p class="text-sm text-muted-foreground">
-					Additional content below the separator.
-				</p>
+				<p class="text-muted-foreground text-sm">This is the main content area separated from the sidebar.</p>
+				<Separator class={args.class} orientation={args.orientation} decorative={args.decorative} />
+				<p class="text-muted-foreground text-sm">Additional content below the separator.</p>
 			</div>
 		</main>
 	</div>

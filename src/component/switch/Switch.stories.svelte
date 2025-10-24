@@ -34,7 +34,10 @@
 			required={args.required}
 			name={args.name}
 		/>
-		<label for="switch" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+		<label
+			for="switch"
+			class="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+		>
 			Do not disturb
 		</label>
 	</div>
@@ -50,14 +53,8 @@
 
 {#snippet checkedTemplate(args)}
 	<div class="flex items-center space-x-2">
-		<Switch
-			class={args.class}
-			thumbClass={args.thumbClass}
-			bind:checked={args.checked}
-		/>
-		<label for="switch" class="text-sm font-medium leading-none">
-			Notifications enabled
-		</label>
+		<Switch class={args.class} thumbClass={args.thumbClass} bind:checked={args.checked} />
+		<label for="switch" class="text-sm leading-none font-medium"> Notifications enabled </label>
 	</div>
 {/snippet}
 
@@ -72,26 +69,12 @@
 {#snippet disabledTemplate(args)}
 	<div class="space-y-4">
 		<div class="flex items-center space-x-2">
-			<Switch
-				class={args.class}
-				thumbClass={args.thumbClass}
-				checked={false}
-				disabled={true}
-			/>
-			<label for="switch" class="text-sm font-medium leading-none">
-				Disabled (unchecked)
-			</label>
+			<Switch class={args.class} thumbClass={args.thumbClass} checked={false} disabled={true} />
+			<label for="switch" class="text-sm leading-none font-medium"> Disabled (unchecked) </label>
 		</div>
 		<div class="flex items-center space-x-2">
-			<Switch
-				class={args.class}
-				thumbClass={args.thumbClass}
-				checked={true}
-				disabled={true}
-			/>
-			<label for="switch" class="text-sm font-medium leading-none">
-				Disabled (checked)
-			</label>
+			<Switch class={args.class} thumbClass={args.thumbClass} checked={true} disabled={true} />
+			<label for="switch" class="text-sm leading-none font-medium"> Disabled (checked) </label>
 		</div>
 	</div>
 {/snippet}
@@ -116,9 +99,7 @@
 					name="notifications"
 					value="enabled"
 				/>
-				<label for="notifications" class="text-sm font-medium leading-none">
-					Email notifications
-				</label>
+				<label for="notifications" class="text-sm leading-none font-medium"> Email notifications </label>
 			</div>
 			<div class="flex items-center space-x-2">
 				<Switch
@@ -128,9 +109,7 @@
 					name="push_notifications"
 					value="enabled"
 				/>
-				<label for="push_notifications" class="text-sm font-medium leading-none">
-					Push notifications
-				</label>
+				<label for="push_notifications" class="text-sm leading-none font-medium"> Push notifications </label>
 			</div>
 			<div class="flex items-center space-x-2">
 				<Switch
@@ -141,14 +120,12 @@
 					value="enabled"
 					required={true}
 				/>
-				<label for="sms_notifications" class="text-sm font-medium leading-none">
+				<label for="sms_notifications" class="text-sm leading-none font-medium">
 					SMS notifications (required)
 				</label>
 			</div>
 		</div>
-		<button type="submit" class="px-4 py-2 bg-primary text-primary-foreground rounded-md">
-			Save Settings
-		</button>
+		<button type="submit" class="bg-primary text-primary-foreground rounded-md px-4 py-2"> Save Settings </button>
 	</form>
 {/snippet}
 
@@ -221,28 +198,28 @@
 		</div>
 
 		<div class="flex items-center space-x-2">
-			<span class="text-sm text-muted-foreground">Current value:</span>
-			<code class="px-2 py-1 bg-muted rounded text-sm">{args.checked ? 'true' : 'false'}</code>
+			<span class="text-muted-foreground text-sm">Current value:</span>
+			<code class="bg-muted rounded px-2 py-1 text-sm">{args.checked ? 'true' : 'false'}</code>
 		</div>
 
 		<div class="flex space-x-2">
 			<button
 				type="button"
-				class="px-3 py-1 bg-primary text-primary-foreground rounded text-sm"
+				class="bg-primary text-primary-foreground rounded px-3 py-1 text-sm"
 				on:click={() => (args.checked = true)}
 			>
 				Set to ON
 			</button>
 			<button
 				type="button"
-				class="px-3 py-1 bg-secondary text-secondary-foreground rounded text-sm"
+				class="bg-secondary text-secondary-foreground rounded px-3 py-1 text-sm"
 				on:click={() => (args.checked = false)}
 			>
 				Set to OFF
 			</button>
 			<button
 				type="button"
-				class="px-3 py-1 bg-muted text-muted-foreground rounded text-sm"
+				class="bg-muted text-muted-foreground rounded px-3 py-1 text-sm"
 				on:click={() => (args.checked = !args.checked)}
 			>
 				Toggle

@@ -3,8 +3,4 @@ import SwitchRoot from './SwitchRoot.svelte'
 import SwitchThumb from './SwitchThumb.svelte'
 import '$/style/tailwind.css'
 
-export {
-	Switch,
-	SwitchRoot,
-	SwitchThumb,
-}
+export { Switch, SwitchRoot, SwitchThumb }

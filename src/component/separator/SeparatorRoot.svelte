@@ -11,20 +11,10 @@
 		children?: Snippet
 	}
 
-	let {
-		class: className,
-		children,
-		orientation = 'horizontal',
-		decorative = false,
-		...props
-	}: Props = $props()
+	let { class: className, children, orientation = 'horizontal', decorative = false, ...props }: Props = $props()
 
 	const classes = $derived(
-		cn(
-			'shrink-0 bg-border-card',
-			orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
-			className
-		)
+		cn('shrink-0 bg-border-card', orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]', className)
 	)
 </script>
 

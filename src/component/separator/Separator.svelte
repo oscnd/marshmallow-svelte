@@ -11,13 +11,7 @@
 		children?: Snippet
 	}
 
-	let {
-		class: className,
-		children,
-		orientation = 'horizontal',
-		decorative = false,
-		...props
-	}: Props = $props()
+	let { class: className, children, orientation = 'horizontal', decorative = false, ...props }: Props = $props()
 
 	const classes = $derived(cn(className))
 </script>
