@@ -63,7 +63,7 @@
     /* Shadows */
     --shadow-mini: 0px 1px 0px 1px rgba(0, 0, 0, 0.04);
     --shadow-mini-inset: 0px 1px 0px 0px rgba(0, 0, 0, 0.04) inset;
-    --shadow-popover: 0px 7px 12px 3px hsla(var(--dark-10));
+    --shadow-popover: 0px 7px 12px 3px hsla(240, 6%, 10%, 0.1);
     --shadow-kbd: 0px 2px 0px 0px rgba(0, 0, 0, 0.07);
     --shadow-btn: 0px 1px 0px 1px rgba(0, 0, 0, 0.03);
     --shadow-card: 0px 2px 0px 1px rgba(0, 0, 0, 0.04);
@@ -162,7 +162,7 @@
     --color-ring: var(--ring);
 
     /* Border Color Mappings */
-    --color-border: var(--border-card);
+    --color-border: var(--border);
     --color-border-input: var(--border-input);
     --color-border-input-hover: var(--border-input-hover);
     --color-border-card: var(--border-card);
