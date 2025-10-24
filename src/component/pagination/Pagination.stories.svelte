@@ -1,22 +1,11 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
-	import {
-		PaginationRoot,
-		PaginationContent,
-		PaginationPage,
-		PaginationPrevButton,
-		PaginationNextButton,
-	} from './index'
+	import { Pagination } from './index'
+    import '$/style/style.scss'
 
 	const { Story } = defineMeta({
 		title: 'Components/Pagination',
-		component: PaginationRoot,
-		subcomponents: {
-			PaginationContent,
-			PaginationPage,
-			PaginationPrevButton,
-			PaginationNextButton,
-		},
+		component: Pagination,
 		tags: ['autodocs'],
 		parameters: {
 			docs: {
@@ -28,28 +17,30 @@
 	})
 </script>
 
-{#snippet basicTemplate(args)}
-	<PaginationRoot count={args.count} perPage={args.perPage} siblingCount={args.siblingCount} loop={args.loop}>
-		{#snippet children(props)}
-			<PaginationContent>
-				<PaginationPrevButton />
-				{#each props.pages as page (page.key)}
-					{#if page.type === 'ellipsis'}
-						<div
-							class="text-muted-foreground inline-flex h-10 w-10 items-center justify-center text-sm font-medium"
-						>
-							...
-						</div>
-					{:else}
-						<PaginationPage {page}>
-							{page.value}
-						</PaginationPage>
-					{/if}
-				{/each}
-				<PaginationNextButton />
-			</PaginationContent>
-		{/snippet}
-	</PaginationRoot>
+<script lang="ts">
+	import type { Args } from 'storybook/internal/csf'
+
+	let currentPage = $state(3)
+	let perPage = $state(10)
+	let total = $state(100)
+
+	const totalPages = $derived(Math.ceil(total / perPage))
+	const startIndex = $derived((currentPage - 1) * perPage + 1)
+	const endIndex = $derived(Math.min(currentPage * perPage, total))
+
+	const handlePageChange = (value: number): void => {
+		currentPage = value
+	}
+
+	const handlePaginationChange = (event: Event): void => {
+		const select = event.target as HTMLSelectElement
+		perPage = parseInt(select.value)
+		currentPage = 1
+	}
+</script>
+
+{#snippet basicTemplate(args: Args)}
+	<Pagination count={args.count} perPage={args.perPage} siblingCount={args.siblingCount} loop={args.loop} />
 {/snippet}
 
 <Story
@@ -63,30 +54,8 @@
 	template={basicTemplate}
 />
 
-{#snippet loopTemplate(args)}
-	<PaginationRoot count={args.count} perPage={args.perPage} siblingCount={args.siblingCount} loop={args.loop}>
-		{#snippet children({ pages })}
-			<PaginationContent>
-				<PaginationPrevButton />
-				{#each pages as page (page.key)}
-					{#if page.type === 'ellipsis'}
-						<div
-							class="text-muted-foreground inline-flex h-10 w-10 items-center justify-center text-sm font-medium"
-						>
-							...
-						</div>
-					{:else}
-						<PaginationPage {page}>
-							{#snippet children()}
-								{page.value}
-							{/snippet}
-						</PaginationPage>
-					{/if}
-				{/each}
-				<PaginationNextButton />
-			</PaginationContent>
-		{/snippet}
-	</PaginationRoot>
+{#snippet loopTemplate(args: Args)}
+	<Pagination count={args.count} perPage={args.perPage} siblingCount={args.siblingCount} loop={args.loop} />
 {/snippet}
 
 <Story
@@ -100,32 +69,17 @@
 	template={loopTemplate}
 />
 
-{#snippet styledTemplate(args)}
-	<PaginationRoot count={args.count} perPage={args.perPage} siblingCount={args.siblingCount} class="space-y-4">
-		{#snippet children({ pages })}
-			<PaginationContent class="flex gap-2">
-				<PaginationPrevButton class="bg-secondary text-secondary-foreground hover:bg-secondary/80" />
-				{#each pages as page (page.key)}
-					{#if page.type === 'ellipsis'}
-						<div
-							class="text-muted-foreground inline-flex h-8 w-8 items-center justify-center text-sm font-medium"
-						>
-							...
-						</div>
-					{:else}
-						<PaginationPage {page}>
-							{#snippet children()}
-								<span class="flex h-8 w-8 items-center justify-center">
-									{page.value}
-								</span>
-							{/snippet}
-						</PaginationPage>
-					{/if}
-				{/each}
-				<PaginationNextButton class="bg-secondary text-secondary-foreground hover:bg-secondary/80" />
-			</PaginationContent>
-		{/snippet}
-	</PaginationRoot>
+{#snippet styledTemplate(args: Args)}
+	<Pagination
+		count={args.count}
+		perPage={args.perPage}
+		siblingCount={args.siblingCount}
+		class="space-y-4"
+		contentClass="flex gap-2"
+		prevButtonClass="bg-secondary text-secondary-foreground hover:bg-secondary/80"
+		nextButtonClass="bg-secondary text-secondary-foreground hover:bg-secondary/80"
+		pageClass="flex h-8 w-8 items-center justify-center"
+	/>
 {/snippet}
 
 <Story
@@ -137,4 +91,47 @@
 	}}
 	name="Custom Styled"
 	template={styledTemplate}
+/>
+
+{#snippet bindableTemplate(args: Args)}
+		<div class="rounded border border-gray-200 p-4 space-y-2 text-sm text-gray-600">
+			<div>Show: <span class="story-code">{startIndex} - {endIndex} / {total}</span></div>
+			<div>Page: <span class="story-code">{currentPage}</span></div>
+			<div>Total pages: <span class="story-code">{totalPages}</span></div>
+			<div class="flex items-center gap-2">
+				<label for="items-per-page">Items per page:</label>
+				<select
+					id="items-per-page"
+					bind:value={perPage}
+					onchange={handlePaginationChange}
+					class="rounded border border-gray-300 px-2"
+				>
+					<option value={5}>5</option>
+					<option value={10}>10</option>
+					<option value={20}>20</option>
+					<option value={50}>50</option>
+				</select>
+			</div>
+		</div>
+
+		<Pagination
+			count={total}
+			{perPage}
+			siblingCount={2}
+			loop={true}
+			bind:page={currentPage}
+			onPageChange={handlePageChange}
+			class="mt-4"
+		/>
+{/snippet}
+
+<Story
+	args={{
+		count: 100,
+		perPage: 10,
+		siblingCount: 2,
+		loop: true,
+	}}
+	name="With Bindable State"
+	template={bindableTemplate}
 />

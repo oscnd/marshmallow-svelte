@@ -45,11 +45,13 @@
 		nextButtonClass,
 		pageClass,
 		children,
+		page = $bindable(),
+		onPageChange,
 		...props
 	}: Props = $props()
 </script>
 
-<PaginationRoot {...props} class={className}>
+<PaginationRoot {...props} {page} {onPageChange} class={className}>
 	{#snippet children(props)}
 		{#if children}
 			{@render children(props)}

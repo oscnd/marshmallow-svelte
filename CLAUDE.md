@@ -14,6 +14,7 @@
 ## Component Implementation
 
 - Example `src/component/:component/index.ts`
+
     ```
     import Combobox from './Combobox.svelte'
     import ComboboxRoot from './ComboboxRoot.svelte'
@@ -24,3 +25,8 @@
         ComboboxRoot,
     }
     ```
+
+- Always use $derived, $derived.by((...) => {...}) for derived stores.
+- Always use arrow functions for defining functions.
+- Naming of functions must use be
+    - `handle<Component><ExtendedComponent><Event>` for event handlers, e.g., handleButtonClick, handlePaginationPageChange
