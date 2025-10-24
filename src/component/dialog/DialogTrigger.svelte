@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dialog, type DialogTriggerProps } from 'bits-ui'
-	import { cn } from '../../lib/utils.js'
+	import { cn } from '$/lib/utils.js'
 	import type { Snippet } from 'svelte'
 
 	export type Props = DialogTriggerProps & {

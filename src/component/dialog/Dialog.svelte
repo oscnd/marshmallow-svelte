@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dialog as DialogPrimitive } from 'bits-ui'
-    import DialogContent from './DialogContent.svelte'
+	import DialogContent from './DialogContent.svelte'
 	import DialogHeader from './DialogHeader.svelte'
 	import DialogTitle from './DialogTitle.svelte'
 	import DialogDescription from './DialogDescription.svelte'

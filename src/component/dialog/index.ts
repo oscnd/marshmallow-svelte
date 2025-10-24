@@ -7,13 +7,4 @@ import DialogTitle from './DialogTitle.svelte'
 import DialogDescription from './DialogDescription.svelte'
 import DialogFooter from './DialogFooter.svelte'
 
-export {
-	Dialog,
-	DialogContent,
-	DialogTrigger,
-	DialogClose,
-	DialogHeader,
-	DialogTitle,
-	DialogDescription,
-	DialogFooter
-}
+export { Dialog, DialogContent, DialogTrigger, DialogClose, DialogHeader, DialogTitle, DialogDescription, DialogFooter }
