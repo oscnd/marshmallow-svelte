@@ -15,7 +15,7 @@
 			'data-[selection-start]:bg-primary data-[selection-start]:text-primary-foreground',
 			'data-[selection-start]:after:absolute data-[selection-start]:after:top-0 data-[selection-start]:after:-left-1 data-[selection-start]:after:-right-1 data-[selection-start]:after:h-full data-[selection-start]:after:bg-primary data-[selection-start]:after:-z-1 data-[selection-start]:after:rounded-l-md',
 			'data-[selection-end]:bg-primary data-[selection-end]:text-primary-foreground',
-            'data-[selection-end]:after:absolute data-[selection-end]:after:top-0 data-[selection-end]:after:-left-1 data-[selection-end]:after:-right-1 data-[selection-end]:after:h-full data-[selection-end]:after:bg-primary data-[selection-end]:after:-z-1 data-[selection-end]:after:rounded-r-md',
+			'data-[selection-end]:after:absolute data-[selection-end]:after:top-0 data-[selection-end]:after:-left-1 data-[selection-end]:after:-right-1 data-[selection-end]:after:h-full data-[selection-end]:after:bg-primary data-[selection-end]:after:-z-1 data-[selection-end]:after:rounded-r-md',
 			'data-[selected]:bg-muted data-[selected]:text-foreground data-[selected]:z-10 data-[selected]:-mx-8 data-[selected]:rounded-none',
 			'data-[disabled]:text-muted-foreground data-[disabled]:opacity-50',
 			'data-[outside-month]:text-muted-foreground data-[outside-month]:opacity-50',
