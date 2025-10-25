@@ -131,9 +131,9 @@
 			</button>
 			<button
 				class="bg-accent text-accent-foreground hover:bg-accent/90 rounded px-3 py-1 text-sm"
-				onclick={() => (args.value = new CalendarDate(2024, 6, 15))}
+				onclick={() => (args.value = today(getLocalTimeZone()))}
 			>
-				Jump to June
+				Jump to today
 			</button>
 		</div>
 	</div>

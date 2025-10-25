@@ -56,8 +56,7 @@
 			'data-[selected]:bg-primary data-[selected]:text-primary-foreground',
 			'data-[disabled]:text-muted-foreground data-[disabled]:opacity-50',
 			'data-[outside-month]:text-muted-foreground data-[outside-month]:opacity-50',
-			'data-[today]:bg-accent data-[today]:text-accent-foreground',
-			'before:absolute before:top-1.5 before:left-1/2 before:-translate-x-1/2 before:h-1 before:w-1 before:rounded-full before:bg-primary group-data-selected:before:bg-background data-[today]:before:block data-[not-today]:before:hidden',
+			'before:absolute before:top-1 before:left-1/2 before:-translate-x-1/2 before:h-1 before:w-1 before:rounded-full before:bg-primary data-[selected]:before:bg-background before:hidden data-[today]:before:block',
 			dayClass
 		)
 	)
