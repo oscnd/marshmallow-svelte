@@ -53,3 +53,7 @@
 - Use storybook url: http://localhost:6006/iframe.html?globals=&id=components-checkbox--indeterminate&viewMode=story,
   change `checkbox` to component name and `indeterminate` to story name.
 - Use screenshot for visual only, do not write to file.
+
+# Learning
+
+Every time I tell to fix naming or conventions, summarize into single line and write into this CLAUDE.md.
