@@ -39,8 +39,7 @@
 		placeholder = $bindable(),
 		...props
 	}: Props = $props()
-
-	</script>
+</script>
 
 <CalendarRoot {...props} class={className} bind:value bind:placeholder>
 	{#snippet children({ months, weekdays })}
@@ -51,30 +50,30 @@
 		</CalendarHeader>
 
 		<CalendarGrid class={gridClass}>
-				<CalendarGridHead>
-					<CalendarGridRow>
-						{#each weekdays as weekday, i (i)}
-							<CalendarHeadCell>
-								<div class="text-muted-foreground h-10 w-10 text-center text-sm font-medium">
-									{weekday.slice(0, 2)}
-								</div>
-							</CalendarHeadCell>
-						{/each}
-					</CalendarGridRow>
-				</CalendarGridHead>
-				<CalendarGridBody>
-					{#each months as month, i (i)}
-						{#each month.weeks as weekDates, i (i)}
-							<CalendarGridRow>
-								{#each weekDates as date, i (i)}
-									<CalendarCell class={cellClass} month={month.value} {date}>
-										<CalendarDay class={dayClass} />
-									</CalendarCell>
-								{/each}
-							</CalendarGridRow>
-						{/each}
+			<CalendarGridHead>
+				<CalendarGridRow>
+					{#each weekdays as weekday, i (i)}
+						<CalendarHeadCell>
+							<div class="text-muted-foreground h-10 w-10 text-center text-sm font-medium">
+								{weekday.slice(0, 2)}
+							</div>
+						</CalendarHeadCell>
 					{/each}
-				</CalendarGridBody>
-			</CalendarGrid>
+				</CalendarGridRow>
+			</CalendarGridHead>
+			<CalendarGridBody>
+				{#each months as month, i (i)}
+					{#each month.weeks as weekDates, i (i)}
+						<CalendarGridRow>
+							{#each weekDates as date, i (i)}
+								<CalendarCell class={cellClass} month={month.value} {date}>
+									<CalendarDay class={dayClass} />
+								</CalendarCell>
+							{/each}
+						</CalendarGridRow>
+					{/each}
+				{/each}
+			</CalendarGridBody>
+		</CalendarGrid>
 	{/snippet}
 </CalendarRoot>

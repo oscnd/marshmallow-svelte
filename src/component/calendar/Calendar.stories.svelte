@@ -52,8 +52,8 @@
 	args={{
 		type: 'single',
 		placeholder: new CalendarDate(2024, 1, 15),
-		minValue: new CalendarDate(2024, 1, 1),
-		maxValue: new CalendarDate(2024, 1, 31),
+		minValue: new CalendarDate(2024, 1, 3),
+		maxValue: new CalendarDate(2024, 1, 16),
 	}}
 	name="With Date Range"
 />
