@@ -1,6 +1,6 @@
 {
 	"name": "@oscnd/marshmallow-svelte",
-	"module": "index.ts",
+	"module": "src/index.ts",
 	"devDependencies": {
 		"@chromatic-com/storybook": "^4.1.1",
 		"@lucide/svelte": "^0.546.0",

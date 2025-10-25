@@ -4,6 +4,5 @@ import PaginationPage from './PaginationPage.svelte'
 import PaginationPrevButton from './PaginationPrevButton.svelte'
 import PaginationNextButton from './PaginationNextButton.svelte'
 import PaginationContent from './PaginationContent.svelte'
-import '$/style/tailwind.css'
 
 export { Pagination, PaginationRoot, PaginationPage, PaginationPrevButton, PaginationNextButton, PaginationContent }

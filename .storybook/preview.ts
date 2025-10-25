@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/svelte-vite'
+import '$/style/tailwind.css'
+import '$/style/style.scss'
 
 const preview: Preview = {
 	parameters: {

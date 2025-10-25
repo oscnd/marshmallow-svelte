@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from './component/button/Button.svelte'
-	import './style/style.scss'
-	import './style/tailwind.css'
+	import '$/style/style.scss'
+	import '$/style/tailwind.css'
 
 	let isDark = $state(false)
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '../../style/tailwind.css'
 	import { Avatar, type AvatarFallbackProps } from 'bits-ui'
 	import type { SvelteComponent } from 'svelte'
 	import { cn } from '$/lib/utils'

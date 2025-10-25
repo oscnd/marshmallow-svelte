@@ -1,7 +1,6 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf'
 	import { Pagination } from './index'
-	import '$/style/style.scss'
 
 	const { Story } = defineMeta({
 		title: 'Components/Pagination',

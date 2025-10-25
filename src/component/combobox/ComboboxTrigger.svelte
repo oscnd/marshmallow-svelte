@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$/style/tailwind.css'
 	import { Combobox as BitsCombobox, type ComboboxTriggerProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import { ChevronDown } from '@lucide/svelte'

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$/style/tailwind.css'
 	import { Combobox as BitsCombobox, type ComboboxItemProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import { Check } from '@lucide/svelte'
