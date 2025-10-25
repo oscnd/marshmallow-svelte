@@ -39,11 +39,15 @@
     - If classname added in the component, use `const classes = cn(...)`, otherwise no need to define class prop.
     - `children` props will type as `Snippet` (import type { Snippet } from 'svelte')
 
+- Main components should only orchestrate and pass class props to subcomponents, not contain derived classes.
+- All derived classes and styling logic must be handled within individual subcomponents themselves.
+- Each subcomponent uses `const classes = $derived(cn(className, 'additiona-class'))` pattern.
 - Always use $derived, $derived.by((...) => {...}) for derived stores.
 - Always use arrow functions for defining functions.
 - Naming of functions must use be
     - `handle<Component><ExtendedComponent><Event>` for event handlers, e.g., handleButtonClick, handlePaginationPageChange
-- Import of primitive components from bits-ui must not rename the import name, e.g., `import { Button } from '$/lib/bits-ui/button'`
+- Import of primitive components from bits-ui must not rename the import name, e.g., `import { Calendar } from 'bits-ui'` and use as `<Calendar.Root />` `<Calendar.Day />` etc.
+- Always use `const classes = $derived(cn(...))` for consistent variable naming, not component-specific names like `rootClasses` `buttonClasses`.
 - Always follow naming conventions and patterns from other implemented components.
 
 ## Inspection
@@ -57,3 +61,12 @@
 # Learning
 
 Every time I tell to fix naming or conventions, summarize into single line and write into this CLAUDE.md.
+
+Styling guidelines:
+
+- Write in appropriate sections above (Overview, etc.), NOT in Learning section
+- Use same concise format as existing guideline, no bold formatting, simple bullet points
+- Keep statements brief and actionable like existing documentation
+- Match tone and structure of other guidelines in the same section
+- Don't use emphasis words or detailed explanations
+- Follow pattern: "Do this" or "Always use X" not "MISTAKE: X CORRECT: Y"
