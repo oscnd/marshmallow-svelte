@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$/style/tailwind.css'
 	import { DropdownMenu, type DropdownMenuSubContentProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 

@@ -11,7 +11,6 @@ import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.svelte'
 import DropdownMenuSubContent from './DropdownMenuSubContent.svelte'
 import DropdownMenuSeparator from './DropdownMenuSeparator.svelte'
 import DropdownMenuPortal from './DropdownMenuPortal.svelte'
-import '$/style/tailwind.css'
 
 export {
 	DropdownMenu,

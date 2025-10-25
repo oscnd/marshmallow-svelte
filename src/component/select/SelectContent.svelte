@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$/style/tailwind.css'
 	import { Select, type SelectContentProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 

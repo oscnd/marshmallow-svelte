@@ -1,7 +1,6 @@
 <script lang="ts">
-	import '../../style/tailwind.css'
 	import { Button, type ButtonRootProps } from 'bits-ui'
-	import { type Palette } from '../../declaration/palette.ts'
+	import { type Palette } from '$/declaration/palette.ts'
 	import { cn } from '$/lib/utils'
 	import { LoaderCircle } from '@lucide/svelte'
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$/style/tailwind.css'
 	import { DropdownMenu, type DropdownMenuSubTriggerProps } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import { ChevronRight } from '@lucide/svelte'

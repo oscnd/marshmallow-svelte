@@ -24,6 +24,7 @@
 		contentClass?: string
 		triggerClass?: string
 		inputClass?: string
+		searchValue?: string
 		children?: Snippet
 	}
 
@@ -36,10 +37,9 @@
 		inputClass,
 		children,
 		value = $bindable(),
+		searchValue = $bindable(''),
 		...props
 	}: Props = $props()
-
-	let searchValue = $state('')
 
 	const filteredOptions = $derived(
 		searchValue === ''
