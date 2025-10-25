@@ -41,7 +41,7 @@
 
 - Main components should only orchestrate and pass class props to subcomponents, not contain derived classes.
 - All derived classes and styling logic must be handled within individual subcomponents themselves.
-- Each subcomponent uses `const classes = $derived(cn(className, 'additiona-class'))` pattern.
+- Each subcomponent uses `const classes = $derived(cn('additiona-class', className))` pattern.
 - Always use $derived, $derived.by((...) => {...}) for derived stores.
 - Always use arrow functions for defining functions.
 - Naming of functions must use be

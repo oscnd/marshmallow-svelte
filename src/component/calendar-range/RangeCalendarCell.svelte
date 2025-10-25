@@ -9,7 +9,7 @@
 
 	let { class: className, ...props }: Props = $props()
 
-	const classes = $derived(cn('relative p-0 text-center text-sm focus-within:relative focus-within:z-20', className))
+	const classes = $derived(cn('relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&[data-selected]:not([data-selection-start]):not([data-selection-end])]:bg-muted', className))
 </script>
 
 <RangeCalendar.Cell {...props} class={classes} />

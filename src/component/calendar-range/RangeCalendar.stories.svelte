@@ -91,22 +91,6 @@
 	name="Fixed Weeks"
 />
 
-<Story
-	args={{
-		placeholder: new CalendarDate(2024, 1, 15),
-		pagedNavigation: true,
-	}}
-	name="Paged Navigation"
-/>
-
-<Story
-	args={{
-		placeholder: new CalendarDate(2024, 1, 15),
-		excludeDisabled: true,
-	}}
-	name="Exclude Disabled"
-/>
-
 {#snippet controlledTemplate(args: Args)}
 	<div class="space-y-4">
 		<div class="bg-muted rounded p-4">
