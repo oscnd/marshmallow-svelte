@@ -72,7 +72,7 @@
 <Story name="Basic" template={basicDialogTemplate} args={{ open: false }} />
 
 {#snippet formDialogTemplate(args)}
-	<DialogRoot bind:open={args.open} onOpenChange={(e) => args.open = e}>
+	<DialogRoot bind:open={args.open} onOpenChange={(e) => (args.open = e)}>
 		<DialogTrigger asChild>
 			{#snippet children(builder)}
 				<Button {...builder}>Edit Profile</Button>

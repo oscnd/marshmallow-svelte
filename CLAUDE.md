@@ -5,7 +5,6 @@
 - Run `bun run check` every time before finishing a code change.
 - Always use const and arrow functions for defining functions.
 - Import path must use `$` alias for `src` directory (e.g., `import { Card } from '$/component/card'`, `import { cn } from '$/lib/utils'`).
-- `children` props will type as `Snippet` (import type { Snippet } from 'svelte')
 - Other props must name as `...props`
 - Order component props from {...props}, class={classes}, other props.
 - See `src/component/avatar/{Avatar.svelte,Avatar.stories.svelte}`, `src/component/button/Button.svelte`, `src/component/combobox/Combobox.svelte`, `src/component/dialog/Dialog.svelte` for reference.
@@ -14,7 +13,7 @@
 
 ## Component Implementation
 
-- Example `src/component/:component/index.ts`
+- Example component index `src/component/:component/index.ts`
 
     ```
     import Combobox from './Combobox.svelte'
@@ -27,11 +26,24 @@
     }
     ```
 
+- Default component props
+
+    ```
+    export type Props = CalendarHeadCellProps & {
+    	/** Children */
+    	children?: Snippet
+    }
+    ```
+
+    - Do not add other props if not directly used in the component
+    - If classname added in the component, use `const classes = cn(...)`, otherwise no need to define class prop.
+    - `children` props will type as `Snippet` (import type { Snippet } from 'svelte')
+
 - Always use $derived, $derived.by((...) => {...}) for derived stores.
 - Always use arrow functions for defining functions.
 - Naming of functions must use be
     - `handle<Component><ExtendedComponent><Event>` for event handlers, e.g., handleButtonClick, handlePaginationPageChange
-- Import of primitive components from bits-ui must not change, e.g., `import { Button } from '$/lib/bits-ui/button'`
+- Import of primitive components from bits-ui must not rename the import name, e.g., `import { Button } from '$/lib/bits-ui/button'`
 - Always follow naming conventions and patterns from other implemented components.
 
 ## Inspection

@@ -3,6 +3,7 @@
 	"module": "src/index.ts",
 	"devDependencies": {
 		"@chromatic-com/storybook": "^4.1.1",
+		"@internationalized/date": "^3.10.0",
 		"@lucide/svelte": "^0.546.0",
 		"@storybook/addon-a11y": "^9.1.13",
 		"@storybook/addon-docs": "^9.1.13",

@@ -121,25 +121,19 @@
 {#snippet controlledTemplate(args)}
 	<div class="space-y-4">
 		<p class="text-muted-foreground text-sm">
-			Selected value: <code class="bg-muted rounded px-1">{args.selectedValue || 'None'}</code>
+			Selected value: <code class="bg-muted rounded px-1">{args.value || 'None'}</code>
 		</p>
-		<Combobox
-			{...args}
-			type="single"
-			bind:value={args.selectedValue}
-			options={fruits}
-			placeholder="Select a fruit..."
-		/>
+		<Combobox {...args} type="single" bind:value={args.value} options={fruits} placeholder="Select a fruit..." />
 		<div class="flex gap-2">
 			<button
 				class="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-3 py-1 text-sm"
-				onclick={() => (args.selectedValue = 'apple')}
+				onclick={() => (args.value = 'apple')}
 			>
 				Set to Apple
 			</button>
 			<button
 				class="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded px-3 py-1 text-sm"
-				onclick={() => (args.selectedValue = '')}
+				onclick={() => (args.value = '')}
 			>
 				Clear
 			</button>
@@ -149,7 +143,7 @@
 
 <Story
 	args={{
-		selectedValue: '',
+		value: '',
 	}}
 	name="Controlled"
 	template={controlledTemplate}
