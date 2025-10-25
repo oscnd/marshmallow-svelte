@@ -41,12 +41,14 @@
 	}: Props = $props()
 </script>
 
-<CalendarRoot {...props} class={className} bind:value bind:placeholder>
+<CalendarRoot {...props} bind:placeholder bind:value class={className}>
 	{#snippet children({ months, weekdays })}
 		<CalendarHeader class={headerClass}>
-			<CalendarPrevButton />
 			<CalendarHeading />
-			<CalendarNextButton />
+			<div class="flex">
+				<CalendarPrevButton />
+				<CalendarNextButton />
+			</div>
 		</CalendarHeader>
 
 		<CalendarGrid class={gridClass}>

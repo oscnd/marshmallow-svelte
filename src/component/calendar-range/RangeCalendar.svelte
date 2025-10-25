@@ -43,12 +43,13 @@
 <RangeCalendarRoot {...props} class={className} bind:value bind:placeholder>
 	{#snippet children({ months, weekdays })}
 		<RangeCalendarHeader class={headerClass}>
-			<RangeCalendarPrevButton />
 			<RangeCalendarHeading />
-			<RangeCalendarNextButton />
+			<div class="flex">
+				<RangeCalendarPrevButton />
+				<RangeCalendarNextButton />
+			</div>
 		</RangeCalendarHeader>
-
-			<RangeCalendarGrid class={gridClass}>
+		<RangeCalendarGrid class={gridClass}>
 			<RangeCalendarGridHead>
 				<RangeCalendarGridRow>
 					{#each weekdays as weekday, i (i)}

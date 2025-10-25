@@ -11,7 +11,10 @@
 	let { class: className, ...props }: Props = $props()
 
 	const classes = $derived(
-		cn('rounded-9px bg-background-alt hover:bg-muted inline-flex size-10 items-center justify-center active:scale-[0.98]', className)
+		cn(
+			'rounded-9px bg-background-alt hover:bg-muted inline-flex size-10 items-center justify-center active:scale-[0.98]',
+			className
+		)
 	)
 </script>
 

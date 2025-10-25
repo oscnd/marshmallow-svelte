@@ -11,7 +11,7 @@
 
 	let { class: className, value = $bindable(), placeholder = $bindable(), ...props }: Props = $props()
 
-	const classes = $derived(cn('p-3 max-w-[280px]', className))
+	const classes = $derived(cn('p-3 max-w-[320px]', className))
 </script>
 
 <RangeCalendar.Root {...props} weekdayFormat="short" fixedWeeks={true} class={classes} bind:value bind:placeholder />
