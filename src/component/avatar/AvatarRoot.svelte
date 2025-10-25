@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../../style/tailwind.css'
 	import { Avatar, type AvatarRootProps } from 'bits-ui'
-	import { cn } from '../../lib/utils.js'
+	import { cn } from '$/lib/utils'
 	import type { SvelteComponent } from 'svelte'
 
 	export type Props = AvatarRootProps

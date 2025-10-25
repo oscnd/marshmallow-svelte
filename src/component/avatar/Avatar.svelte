@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '../../lib/utils.js'
+	import { cn } from '$/lib/utils'
 	import AvatarRoot from './AvatarRoot.svelte'
 	import AvatarImage from './AvatarImage.svelte'
 	import AvatarFallback from './AvatarFallback.svelte'

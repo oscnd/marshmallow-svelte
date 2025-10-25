@@ -13,10 +13,7 @@
 	const { class: className, children, ...props }: Props = $props()
 
 	const classes = $derived(
-		cn(
-			'inline-flex items-center justify-center font-medium transition-colors focus:outline-none',
-			className
-		)
+		cn('inline-flex items-center justify-center font-medium transition-colors focus:outline-none', className)
 	)
 </script>
 

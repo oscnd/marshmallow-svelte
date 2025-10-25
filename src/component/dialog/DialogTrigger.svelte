@@ -12,12 +12,7 @@
 
 	const { class: className, children, ...props }: Props = $props()
 
-	const classes = $derived(
-		cn(
-			'inline-flex items-center justify-center font-medium transition-colors',
-			className
-		)
-	)
+	const classes = $derived(cn('inline-flex items-center justify-center font-medium transition-colors', className))
 </script>
 
 <Dialog.Trigger {...props} class={classes}>
