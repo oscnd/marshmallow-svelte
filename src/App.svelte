@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Counter from './lib/Counter.svelte'
 	import Button from './component/button/Button.svelte'
 	import './style/style.scss'
 	import './style/tailwind.css'
@@ -47,10 +46,6 @@
 					</svg>
 				{/if}
 			</button>
-		</div>
-
-		<div class="card bg-card text-card-foreground mb-6 rounded-lg p-6 shadow-sm">
-			<Counter />
 		</div>
 
 		<!-- Button Components Demo -->
