@@ -12,12 +12,12 @@
 
 	const classes = $derived(
 		cn(
-			'rounded-9px bg-background-alt hover:bg-muted inline-flex size-10 items-center justify-center active:scale-[0.98]',
+			'inline-flex items-center justify-center rounded-md bg-background hover:bg-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 h-9 w-9 flex-shrink-0',
 			className
 		)
 	)
 </script>
 
 <RangeCalendar.NextButton {...props} class={classes}>
-	<ChevronRight class="size-6" />
+	<ChevronRight class="h-4 w-4" />
 </RangeCalendar.NextButton>

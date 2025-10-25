@@ -9,7 +9,7 @@
 
 	let { class: className, ...props }: Props = $props()
 
-	const classes = $derived(cn('text-[15px] font-medium', className))
+	const classes = $derived(className)
 </script>
 
 <RangeCalendar.Heading {...props} class={classes} />

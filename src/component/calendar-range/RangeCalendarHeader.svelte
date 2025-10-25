@@ -9,7 +9,7 @@
 
 	let { class: className, ...props }: Props = $props()
 
-	const classes = $derived(cn('flex items-center justify-between', className))
+	const classes = $derived(cn('flex items-center justify-between ml-2 mb-4', className))
 </script>
 
 <RangeCalendar.Header {...props} class={classes} />

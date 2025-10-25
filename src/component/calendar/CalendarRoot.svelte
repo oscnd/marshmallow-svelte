@@ -14,4 +14,4 @@
 	const classes = $derived(cn('p-3 max-w-[320px]', className))
 </script>
 
-<Calendar.Root {...props} bind:value bind:placeholder class={classes} />
+<Calendar.Root {...props} weekdayFormat="short" bind:value bind:placeholder class={classes} />
