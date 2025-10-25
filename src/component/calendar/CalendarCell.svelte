@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import type { CalendarCellProps } from 'bits-ui'
 
@@ -14,4 +14,4 @@
 	)
 </script>
 
-<CalendarPrimitive.Cell {...props} class={classes} />
+<Calendar.Cell {...props} class={classes} />

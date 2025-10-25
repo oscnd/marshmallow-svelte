@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import type { CalendarDayProps } from 'bits-ui'
 
@@ -21,4 +21,4 @@
 	)
 </script>
 
-<CalendarPrimitive.Day {...props} class={classes} />
+<Calendar.Day {...props} class={classes} />

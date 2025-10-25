@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import type { DateValue } from '@internationalized/date'
 	import type { CalendarRootProps } from 'bits-ui'
@@ -14,4 +14,4 @@
 	const classes = $derived(cn('p-3 max-w-[280px]', className))
 </script>
 
-<CalendarPrimitive.Root {...props} bind:value bind:placeholder class={classes} />
+<Calendar.Root {...props} bind:value bind:placeholder class={classes} />

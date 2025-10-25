@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { ChevronLeft } from '@lucide/svelte'
 	import { cn } from '$/lib/utils'
 	import type { CalendarPrevButtonProps } from 'bits-ui'
@@ -18,6 +18,6 @@
 	)
 </script>
 
-<CalendarPrimitive.PrevButton {...props} class={classes}>
+<Calendar.PrevButton {...props} class={classes}>
 	<ChevronLeft class="h-4 w-4" />
-</CalendarPrimitive.PrevButton>
+</Calendar.PrevButton>

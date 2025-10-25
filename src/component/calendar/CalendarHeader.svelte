@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import type { CalendarHeaderProps } from 'bits-ui'
 
@@ -12,4 +12,4 @@
 	const classes = $derived(cn('flex items-center justify-between ml-2 mb-4', className))
 </script>
 
-<CalendarPrimitive.Header {...props} class={classes} />
+<Calendar.Header {...props} class={classes} />

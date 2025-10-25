@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { cn } from '$/lib/utils'
 	import type { CalendarGridProps } from 'bits-ui'
 
@@ -12,4 +12,4 @@
 	const classes = $derived(cn('w-full border-collapse space-y-1', className))
 </script>
 
-<CalendarPrimitive.Grid {...props} class={classes} />
+<Calendar.Grid {...props} class={classes} />

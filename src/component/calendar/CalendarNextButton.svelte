@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui'
+	import { Calendar } from 'bits-ui'
 	import { ChevronRight } from '@lucide/svelte'
 	import { cn } from '$/lib/utils'
 	import type { CalendarNextButtonProps } from 'bits-ui'
@@ -18,6 +18,6 @@
 	)
 </script>
 
-<CalendarPrimitive.NextButton {...props} class={classes}>
+<Calendar.NextButton {...props} class={classes}>
 	<ChevronRight class="h-4 w-4" />
-</CalendarPrimitive.NextButton>
+</Calendar.NextButton>
